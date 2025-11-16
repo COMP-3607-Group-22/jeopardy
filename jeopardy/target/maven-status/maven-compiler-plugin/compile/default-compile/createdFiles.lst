@@ -1,0 +1,12 @@
+com\project\CategoryManager.class
+com\project\CSVAdapter.class
+com\project\Category.class
+com\project\ParserAdapter.class
+com\project\LoadFileCommand.class
+com\project\Main.class
+com\project\XMLParser.class
+com\project\CSVParser.class
+com\project\JSONParser.class
+com\project\XMLAdapter.class
+com\project\JSONAdapter.class
+com\project\FileParser.class
