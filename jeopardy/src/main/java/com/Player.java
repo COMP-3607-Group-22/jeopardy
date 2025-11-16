@@ -9,7 +9,7 @@ public class Player {
 
     public Player(String name){
 
-        this.id = UUID.randomUUID().toString();;
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.score = 0;
     }
