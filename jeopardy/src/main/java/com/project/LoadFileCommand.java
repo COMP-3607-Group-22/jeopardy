@@ -1,6 +1,6 @@
 package com.project;
 
-public class LoadFileCommand {
+public class LoadFileCommand implements GameEngineCommand {
     private String fileName;
     private CategoryManager questionManager;
 
@@ -8,7 +8,7 @@ public class LoadFileCommand {
         this.fileName = fileName;
         this.questionManager = questionManager;
     }
-
+    @Override
     public void execute(){
         this.questionManager.buildQuestions(this.fileName);
     }
