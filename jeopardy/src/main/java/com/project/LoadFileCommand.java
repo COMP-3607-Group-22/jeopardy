@@ -2,9 +2,9 @@ package com.project;
 
 public class LoadFileCommand implements GameEngineCommand {
     private String fileName;
-    private CategoryManager questionManager;
+    private QuestionManager questionManager;
 
-    public LoadFileCommand(CategoryManager questionManager, String fileName){
+    public LoadFileCommand(QuestionManager questionManager, String fileName){
         this.fileName = fileName;
         this.questionManager = questionManager;
     }

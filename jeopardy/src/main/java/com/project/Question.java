@@ -1,8 +1,7 @@
 package com.project;
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class Category {
+public class Question {
     private String category;
     private int value;
     private String question;
