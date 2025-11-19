@@ -17,7 +17,7 @@ public class ParserAdapter implements FileParser {
     }
 
     @Override
-    public ArrayList<Category> parse(String fileName) {
+    public ArrayList<Question> parse(String fileName) {
         if (parser == null) {
             throw new IllegalStateException("No parser initialized");
         }
@@ -27,13 +27,13 @@ public class ParserAdapter implements FileParser {
     private void selectParserByFormat(String format) {
         switch (format.toLowerCase()) {
             case "csv":
-                this.parser = new CSVParser();
+                this.parser = new CSVParserAdaptee();
                 break;
             case "json":
-                this.parser = new JSONParser();
+                this.parser = new JSONParserAdaptee();
                 break;
             case "xml":
-                this.parser = new XMLParser();
+                this.parser = new XMLParserAdaptee();
                 break;
             default:
                 throw new IllegalArgumentException("Unsupported file format: " + format);
