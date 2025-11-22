@@ -1,15 +1,20 @@
 package com.project;
-public class SelectQuestionCommand implements GameEngineCommand {
-    private final int questionId;
-    private final GameEngine gameEngine;
 
-    public SelectQuestionCommand(GameEngine gameEngine, int questionId) {
+import java.util.ArrayList;
+
+public class SelectQuestionCommand implements GameEngineCommand {
+    private final int value;
+    private final GameEngine gameEngine;
+    private ArrayList<Question> questions = null;
+
+    public SelectQuestionCommand(GameEngine gameEngine, int value , ArrayList<Question> questions) {
         this.gameEngine = gameEngine;
-        this.questionId = questionId;
+        this.value = value;
+        this.questions = questions;
     }
 
     @Override 
     public void execute() {
-        gameEngine.selectQuestion(questionId); 
+        gameEngine.selectQuestion(value,questions); 
     }
 }
