@@ -28,7 +28,31 @@ public class JSONParserAdaptee implements ParserAdaptee {
                 for(JsonNode node : arrayNode){
                     if(node.isObject()){
                         try {
-                            questions.add(init(new Question(), node));
+                            QuestionBuilder builder = QuestionBuilder.create();
+
+                            if(node.get("Category") != null) {
+                                builder.setCategory(node.get("Category").asText());
+                            }
+                            if(node.get("Value") != null) {
+                                builder.setValue(node.get("Value").asInt());
+                            }
+                            if(node.get("Question") != null) {
+                                builder.setQuestion(node.get("Question").asText());
+                            }
+                            
+                            JsonNode options = node.get("Options");
+                            if(options != null && options.isObject()) {
+                                String optA = options.get("A") != null ? options.get("A").asText() : "";
+                                String optB = options.get("B") != null ? options.get("B").asText() : "";
+                                String optC = options.get("C") != null ? options.get("C").asText() : "";
+                                String optD = options.get("D") != null ? options.get("D").asText() : "";
+                                builder.setOptions(new ArrayList<>(Arrays.asList(optA, optB, optC, optD)));
+                            }
+                            if(node.get("CorrectAnswer") != null) {
+                                builder.setAnswer(node.get("CorrectAnswer").asText());
+                            }
+                            questions.add(builder.build());
+
                         } catch (NullPointerException | ClassCastException e) {
                             System.err.println("Not expected format: " + e.getMessage());
                         }
@@ -41,30 +65,4 @@ public class JSONParserAdaptee implements ParserAdaptee {
         return questions;
     }
 
-    public Question init(Question category, JsonNode node){
-        if (node.get("Category") != null) {
-            category.setCategory(node.get("Category").asText());
-        }
-        if (node.get("Value") != null) {
-            category.setValue(node.get("Value").asInt());
-        }
-        if (node.get("Question") != null) {
-            category.setQuestion(node.get("Question").asText());
-        }
-
-        JsonNode options = node.get("Options");
-        if (options != null && options.isObject()) {
-            String optA = options.get("A") != null ? options.get("A").asText() : "";
-            String optB = options.get("B") != null ? options.get("B").asText() : "";
-            String optC = options.get("C") != null ? options.get("C").asText() : "";
-            String optD = options.get("D") != null ? options.get("D").asText() : "";
-            category.setOptions(new ArrayList<>(Arrays.asList(optA, optB, optC, optD)));
-        }
-
-        if (node.get("CorrectAnswer") != null) {
-            category.setAnswer(node.get("CorrectAnswer").asText());
-        }
-
-        return category;
-    }
 }

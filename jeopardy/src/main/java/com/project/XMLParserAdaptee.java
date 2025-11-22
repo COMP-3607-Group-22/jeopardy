@@ -35,7 +35,35 @@ public class XMLParserAdaptee implements ParserAdaptee{
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element parsedInfo = (Element) node;
                     try {
-                        questions.add(init(new Question(), parsedInfo));
+                        QuestionBuilder questionBuilder = QuestionBuilder.create();
+                        
+                        if (parsedInfo.getElementsByTagName("Category").getLength() > 0) {
+                            questionBuilder.setCategory(parsedInfo.getElementsByTagName("Category").item(0).getTextContent());
+                        }
+                        if (parsedInfo.getElementsByTagName("Value").getLength() > 0) {
+                            questionBuilder.setValue(Integer.parseInt(parsedInfo.getElementsByTagName("Value").item(0).getTextContent()));
+                        }
+                        if (parsedInfo.getElementsByTagName("QuestionText").getLength() > 0) {
+                            questionBuilder.setQuestion(parsedInfo.getElementsByTagName("QuestionText").item(0).getTextContent());
+                        }
+
+                        if (parsedInfo.getElementsByTagName("Options").getLength() > 0) {
+                            Element options = (Element) parsedInfo.getElementsByTagName("Options").item(0);
+                            String optA = options.getElementsByTagName("OptionA").getLength() > 0 ? 
+                                options.getElementsByTagName("OptionA").item(0).getTextContent() : "";
+                            String optB = options.getElementsByTagName("OptionB").getLength() > 0 ? 
+                                options.getElementsByTagName("OptionB").item(0).getTextContent() : "";
+                            String optC = options.getElementsByTagName("OptionC").getLength() > 0 ? 
+                                options.getElementsByTagName("OptionC").item(0).getTextContent() : "";
+                            String optD = options.getElementsByTagName("OptionD").getLength() > 0 ? 
+                                options.getElementsByTagName("OptionD").item(0).getTextContent() : "";
+                            questionBuilder.setOptions(new ArrayList<>(Arrays.asList(optA, optB, optC, optD)));
+                        }
+                        if (parsedInfo.getElementsByTagName("CorrectAnswer").getLength() > 0) {
+                            questionBuilder.setAnswer(parsedInfo.getElementsByTagName("CorrectAnswer").item(0).getTextContent());
+                        }
+                        questions.add(questionBuilder.build());
+
                     } catch (NullPointerException | NumberFormatException e) {
                         System.err.println("Not expected XML element: " + e.getMessage());
                     }
@@ -45,36 +73,5 @@ public class XMLParserAdaptee implements ParserAdaptee{
             System.err.println("Error reading XML file: " + e.getMessage());
         }
         return questions;
-    }
-
-    public Question init(Question question, Element parsedInfo){
-        if (parsedInfo.getElementsByTagName("Category").getLength() > 0) {
-            question.setCategory(parsedInfo.getElementsByTagName("Category").item(0).getTextContent());
-        }
-        if (parsedInfo.getElementsByTagName("Value").getLength() > 0) {
-            question.setValue(Integer.parseInt(parsedInfo.getElementsByTagName("Value").item(0).getTextContent()));
-        }
-        if (parsedInfo.getElementsByTagName("QuestionText").getLength() > 0) {
-            question.setQuestion(parsedInfo.getElementsByTagName("QuestionText").item(0).getTextContent());
-        }
-
-        if (parsedInfo.getElementsByTagName("Options").getLength() > 0) {
-            Element options = (Element) parsedInfo.getElementsByTagName("Options").item(0);
-            String optA = options.getElementsByTagName("OptionA").getLength() > 0 ? 
-                options.getElementsByTagName("OptionA").item(0).getTextContent() : "";
-            String optB = options.getElementsByTagName("OptionB").getLength() > 0 ? 
-                options.getElementsByTagName("OptionB").item(0).getTextContent() : "";
-            String optC = options.getElementsByTagName("OptionC").getLength() > 0 ? 
-                options.getElementsByTagName("OptionC").item(0).getTextContent() : "";
-            String optD = options.getElementsByTagName("OptionD").getLength() > 0 ? 
-                options.getElementsByTagName("OptionD").item(0).getTextContent() : "";
-            question.setOptions(new ArrayList<>(Arrays.asList(optA, optB, optC, optD)));
-        }
-
-        if (parsedInfo.getElementsByTagName("CorrectAnswer").getLength() > 0) {
-            question.setAnswer(parsedInfo.getElementsByTagName("CorrectAnswer").item(0).getTextContent());
-        }
-
-        return question;
     }
 }
