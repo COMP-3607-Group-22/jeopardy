@@ -9,8 +9,10 @@ public class Main {
         GameEngine xp = new GameEngine();
         
         GameEngineCommand cmd1 = new SelectPlayerCountCommand(xp);
+        GameEngineCommand cmd2 = new EnterPlayerNameCommand(xp);
         
- 
+        system.runCommand(cmd1);
+        system.runCommand(cmd2);
 
 
 
