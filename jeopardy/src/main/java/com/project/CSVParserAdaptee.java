@@ -23,7 +23,15 @@ public class CSVParserAdaptee implements ParserAdaptee {
             while((parsedInfo = reader.readNext()) != null){
                 if (parsedInfo.length >= 8) {
                     try {
-                        questions.add(init(new Question(), parsedInfo));
+                        QuestionBuilder builder = QuestionBuilder.create();
+                        builder.setCategory(parsedInfo[0]);
+                        builder.setValue(Integer.parseInt(parsedInfo[1]));
+                        builder.setQuestion(parsedInfo[2]);
+                        builder.setOptions(new ArrayList<>(Arrays.asList(
+                            parsedInfo[3], parsedInfo[4], parsedInfo[5], parsedInfo[6])));
+                        builder.setAnswer(parsedInfo[7]);
+                        questions.add(builder.build());
+                    
                     } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
                         System.err.println("Not expected format: " + e.getMessage());
                     }
@@ -33,14 +41,5 @@ public class CSVParserAdaptee implements ParserAdaptee {
             System.err.println(e.getMessage());
         }
         return questions;
-    }
-
-    public Question init(Question question, String[] parsedInfo){
-        question.setCategory(parsedInfo[0]);
-        question.setValue(Integer.parseInt(parsedInfo[1]));
-        question.setQuestion(parsedInfo[2]);
-        question.setOptions(new ArrayList<>(Arrays.asList(parsedInfo[3], parsedInfo[4], parsedInfo[5], parsedInfo[6])));
-        question.setAnswer(parsedInfo[7]);
-        return question;
     }
 }
