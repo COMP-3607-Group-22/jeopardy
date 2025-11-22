@@ -2,6 +2,7 @@ package com.project;
 
 import java.util.ArrayList;
 
+// Adapter Pattern - Adapter
 public class ParserAdapter implements FileParser {
     private ParserAdaptee parser;
 
