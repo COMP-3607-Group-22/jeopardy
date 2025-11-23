@@ -2,6 +2,7 @@ package com.project;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -11,7 +12,10 @@ public class GameEngine {
     private Question currentQuestion = null;
     private int pc;
     ArrayList<Player> players = new ArrayList<>();
+    CSVParserAdaptee parser = new CSVParserAdaptee();
+    List<Question> questions = parser.parse("jeopardy/src/main/resources/sample_game_CSV.csv");
     CategoryManager category = new CategoryManager();
+    
 
     public void startGame(){
         //in
@@ -36,13 +40,18 @@ public class GameEngine {
 
     public void selectCategory() {
           boolean found = false;
+          this.questions.forEach(this.category::addQuestion);
           Scanner scanner = new Scanner(System.in);
+
           System.out.println("Select a category from the ones below");
+
           for (String cat : category.getCategoryNames()) {
             System.out.println(" ");
             System.out.println(cat);
             }
-          String chosenCategory = scanner.nextLine();
+
+        String chosenCategory = scanner.nextLine();
+
         for (String cat : category.getCategoryNames()) {
             if(chosenCategory.equals(cat)){
                 this.currentCategory = chosenCategory;
