@@ -8,7 +8,7 @@ public class GameEngine {
 
     private String currentCategory = null;
     private Question currentQuestion = null;
-    private int pc = 3;
+    private int pc;
     ArrayList<Player> players = new ArrayList<>();
 
     public void startGame(){
@@ -25,14 +25,11 @@ public class GameEngine {
     public void enterPlayerName(){
         Scanner scanner = new Scanner(System.in);
         
-        for(int x=1; x>=pc; x++){
+        for(int x=1; x<=pc; x++){
             System.out.println("Enter the name of this player.");
             String name = scanner.nextLine();
             this.players.add(new Player(name));
         } 
-        for(Player p : this.players){
-            System.out.println(p.getName());
-        }
     }
 
     public void selectCategory(String categoryName) {
