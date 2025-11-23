@@ -2,7 +2,10 @@ package com.project;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
+
 
 public class GameEngine {
 
@@ -10,15 +13,23 @@ public class GameEngine {
     private Question currentQuestion = null;
     private int pc;
     ArrayList<Player> players = new ArrayList<>();
+    CSVParserAdaptee parser = new CSVParserAdaptee();
+    List<Question> questions = parser.parse("jeopardy/src/main/resources/sample_game_CSV.csv");
+    CategoryManager category = new CategoryManager();
+    
 
     public void startGame(){
-        //in
+        this.questions.forEach(this.category::addQuestion);
     }
 
     public void selectPlayerCount(){
          Scanner scanner = new Scanner(System.in);
          System.out.println("How many players are playing in the game?");
          int playercount = scanner.nextInt();
+         if(playercount <= 0 || playercount > 4){
+            System.out.println("Pick in the range of 1-4");
+            selectPlayerCount();
+         }
          this.pc = playercount;
     }
 
@@ -29,27 +40,71 @@ public class GameEngine {
             System.out.println("Enter the name of this player.");
             String name = scanner.nextLine();
             this.players.add(new Player(name));
-        } 
+    }
     }
 
-    public void selectCategory(String categoryName) {
-        ArrayList<String> categories = null;
-        for (String cat : categories){
-            if (cat.equals(categoryName)){
-                this.currentCategory = categoryName;
+    public void selectCategory() {
+          boolean found = false;
+          Scanner scanner = new Scanner(System.in);
+
+          System.out.println("Select a category from the ones below");
+
+          for (String cat : category.getCategoryNames()) {
+            System.out.println(" ");
+            System.out.println(cat);
             }
-        }  
-    }
 
-    public void selectQuestion(int value,ArrayList<Question> questions){
-        for (Question q : questions){
-            if(q.getCategory().equals(currentCategory) && q.getValue() == value){
-                this.currentQuestion = q;
+        String chosenCategory = scanner.nextLine();
+
+        for (String cat : category.getCategoryNames()) {
+            if(chosenCategory.equals(cat)){
+                this.currentCategory = chosenCategory;
+                found = true;
             }
         }
+        if (found ==  false){
+            System.out.println("Invalid Category.");
+            selectCategory();
+        }
+        else{
+            System.out.println("You have choosen " + this.currentCategory);
+        }
+        
+}
+
+    public void selectQuestion(){
+        boolean found = false;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Select a question by inputting the dollar value (The $ is there already)");
+        List<Question> list = category.getQuestions(this.currentCategory);
+        Collections.sort(list, (a,b) -> a.getValue() - b.getValue());
+        for (Question q : list) {
+            System.out.println("$" + q.getValue());
+            }
+        int chosenQuestion = scanner.nextInt();
+        for (Question q : list) {
+            if(chosenQuestion == q.getValue()){
+                this.currentQuestion = q;
+                System.out.println("You have choosen the question for $" + chosenQuestion);
+                found=true;
+            }
+        }
+        System.out.println("For $" + currentQuestion.getValue() + "\n" + currentQuestion.getQuestion() + "\n" + currentQuestion.getOptions());
     }
 
     public void answerQuestion(){
+
+        Scanner scanner = new Scanner(System.in);
+        String givenAnswer = scanner.nextLine();
+
+        if(givenAnswer.equals(currentQuestion.getAnswer())){
+            System.out.println("You got the answer correct! yay");
+
+        }
+        else{
+            System.out.println("The correct answer was: " + currentQuestion.getAnswer());
+        }
+        category.removeQuestion(this.currentCategory, this.currentQuestion);
 
     }
 
