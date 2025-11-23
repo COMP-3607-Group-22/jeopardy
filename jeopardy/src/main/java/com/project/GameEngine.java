@@ -4,10 +4,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class GameEngine {
 
     private String currentCategory = null;
     private Question currentQuestion = null;
+    private int pc;
+    ArrayList<Player> players = new ArrayList<>();
+    CategoryManager category = new CategoryManager();
 
     public void startGame(){
         //in
@@ -17,20 +21,44 @@ public class GameEngine {
          Scanner scanner = new Scanner(System.in);
          System.out.println("How many players are playing in the game?");
          int playercount = scanner.nextInt();
+         this.pc = playercount;
     }
 
     public void enterPlayerName(){
-
+        Scanner scanner = new Scanner(System.in);
+        
+        for(int x=1; x<=pc; x++){
+            System.out.println("Enter the name of this player.");
+            String name = scanner.nextLine();
+            this.players.add(new Player(name));
+    }
     }
 
-    public void selectCategory(String categoryName) {
-        ArrayList<String> categories = null;
-        for (String cat : categories){
-            if (cat.equals(categoryName)){
-                currentCategory = categoryName;
+    public void selectCategory() {
+          boolean found = false;
+          Scanner scanner = new Scanner(System.in);
+          System.out.println("Select a category from the ones below");
+          for (String cat : category.getCategoryNames()) {
+            System.out.println(" ");
+            System.out.println(cat);
             }
-        }  
-    }
+          String chosenCategory = scanner.nextLine();
+        for (String cat : category.getCategoryNames()) {
+            if(chosenCategory.equals(cat)){
+                this.currentCategory = chosenCategory;
+                found = true;
+            }
+        }
+        if (found ==  false){
+            System.out.println("Invalid Category.");
+            selectCategory();
+        }
+        else{
+            System.out.println("You have choosen " + this.currentCategory);
+        }
+        
+}
+
 
     public void selectQuestion(int value,ArrayList<Question> questions){
         for (Question q : questions){

@@ -12,10 +12,12 @@ public class Main {
         GameEngine xp = new GameEngine();
         
         GameEngineCommand cmd1 = new SelectPlayerCountCommand(xp);
+        GameEngineCommand cmd2 = new EnterPlayerNameCommand(xp);
+        GameEngineCommand cmd3 = new SelectCategoryCommand(xp);
         
- 
-
-
+        system.runCommand(cmd1);
+        system.runCommand(cmd2);
+        system.runCommand(cmd3);
 
         //LoadFileCommand cmd = new LoadFileCommand(manager, "src/main/resources/sample_game_JSON.json");
         //LoadFileCommand cmd = new LoadFileCommand(manager, "src/main/resources/sample_game_XML.xml");
