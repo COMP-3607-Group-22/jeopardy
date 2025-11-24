@@ -105,7 +105,9 @@ public class GameEngine {
             System.out.println("The correct answer was: " + currentQuestion.getAnswer());
         }
         category.removeQuestion(this.currentCategory, this.currentQuestion);
-
+        
+        this.currentQuestion = null;
+        this.currentCategory = null;
     }
 
     public void exitGame(){
