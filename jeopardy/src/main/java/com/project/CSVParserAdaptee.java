@@ -8,7 +8,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
 public class CSVParserAdaptee implements ParserAdaptee {
-    private ArrayList<Question> questions;
+    private final ArrayList<Question> questions;
 
     public CSVParserAdaptee(){
         this.questions = new ArrayList<>();

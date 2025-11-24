@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class LoadFileCommand implements GameEngineCommand {
-    private String fileName;
-    private QuestionManager questionManager;
+    private final String fileName;
+    private final QuestionManager questionManager;
     private boolean status;
 
     public LoadFileCommand(QuestionManager questionManager, String fileName){

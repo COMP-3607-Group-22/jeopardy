@@ -11,37 +11,20 @@ public class GameEngine {
 
     private String currentCategory = null;
     private Question currentQuestion = null;
-    private int pc;
-    ArrayList<User> players = new ArrayList<>();
-    CSVParserAdaptee parser = new CSVParserAdaptee();
-    List<Question> questions = parser.parse("jeopardy/src/main/resources/sample_game_CSV.csv");
-    CategoryManager category = new CategoryManager();
+    private Player currentPlayer = null;
+    private int currentPlayerIndex = 0;
+    private int totalTurns = 0;
+
+    CategoryManager category;
+    ArrayList<Player> players;
     
-
-    public void startGame(){
-        //in
-    }
-
-    public void selectPlayerCount(){
-         Scanner scanner = new Scanner(System.in);
-         System.out.println("How many players are playing in the game?");
-         int playercount = scanner.nextInt();
-         this.pc = playercount;
-    }
-
-    public void enterPlayerName(){
-        Scanner scanner = new Scanner(System.in);
-        
-        for(int x=1; x<=pc; x++){
-            System.out.println("Enter the name of this player.");
-            String name = scanner.nextLine();
-            this.players.add(new User(name));
-    }
+    public GameEngine (CategoryManager category,ArrayList<Player> players){
+        this.category = category;
+        this.players = players;
     }
 
     public void selectCategory() {
           boolean found = false;
-          this.questions.forEach(this.category::addQuestion);
           Scanner scanner = new Scanner(System.in);
 
           System.out.println("Select a category from the ones below");
@@ -84,18 +67,51 @@ public class GameEngine {
                 this.currentQuestion = q;
                 System.out.println("You have choosen the question for $" + chosenQuestion);
                 found=true;
-            }
-            }
-        System.out.println("For $" + currentQuestion.getValue() + "\n" + currentQuestion.getQuestion() + "\n" + currentQuestion.getOptions());
+            } 
+        }
+        if(found == false){
+            System.out.println("Invalid Question Choice.\n");
+            selectQuestion();
+        }
 
+        System.out.println("For $" + currentQuestion.getValue() + "\n" + currentQuestion.getQuestion() + "\n" + currentQuestion.getOptions());
     }
 
     public void answerQuestion(){
+
+        Scanner scanner = new Scanner(System.in);
+        String givenAnswer = scanner.nextLine();
+
+        if(givenAnswer.equals(currentQuestion.getAnswer())){
+            System.out.println("You got the answer correct! yay");
+            currentPlayer.score = currentPlayer.getScore() + currentQuestion.getValue();
+            System.out.println("Your new score is " + currentPlayer.getScore());
+        }
+        else{
+            System.out.println("The correct answer was: " + currentQuestion.getAnswer());
+            System.out.println("Your new score is " + currentPlayer.getScore());
+        }
         
+        category.removeQuestion(this.currentCategory, this.currentQuestion); //removes questions from list
+
+        List<Question> remainingQuestions = category.getQuestions(this.currentCategory); //remove empty categories from list
+        if (remainingQuestions.isEmpty()) {
+            category.removeCategory(this.currentCategory);
+        }
+
+        this.totalTurns++;
+        this.currentQuestion = null;
+        this.currentCategory = null;
+        this.nextPlayerTurn();
     }
 
-    public void exitGame(){
-        System.exit(0);
+    public void nextPlayerTurn() {
+  
+    this.currentPlayerIndex = (this.currentPlayerIndex + 1) % this.players.size();
+    this.currentPlayer = this.players.get(this.currentPlayerIndex);
+    
+    System.out.println("\nIt is now " + this.currentPlayer.getName() + "'s turn!\n");
+    
     }
 
     public void generateEventLog(ArrayList<String> history) throws IOException{
@@ -111,10 +127,13 @@ public class GameEngine {
         //Input Logic
     }
     public String getCurrentCategory() {
-        return currentCategory;
+        return this.currentCategory;
     }
 
     public Question getCurrentQuestion() {
-        return currentQuestion;
+        return this.currentQuestion;
     }
+    public int getTotalTurnsPlayed() {
+    return this.totalTurns;
+}
 }

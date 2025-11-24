@@ -1,13 +1,13 @@
 package com.project;
 import java.util.UUID;
 
-public class User {
+public class Player {
 
     private final String id;
     private final String name;
-    private final int score;
+    int score;
 
-    public User(String name) {
+    public Player(String name) {
         this.id = UUID.randomUUID().toString(); 
         this.name = name;
         this.score = 0;

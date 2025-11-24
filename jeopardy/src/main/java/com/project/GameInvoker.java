@@ -3,17 +3,17 @@ import java.util.ArrayList;
 
 public class GameInvoker{
     private ArrayList<String> history = new ArrayList<>();
-    private User user;
+    private Player Player;
 
     public ArrayList<String> getHistory(){return this.history;}
 
-    public void runCommand(User user, GameEngineCommand command){
+    public void runCommand(Player Player, GameEngineCommand command){
         command.execute();
-        addToHistory(user, command);
+        addToHistory(Player, command);
     }
 
-    public void addToHistory(User user, GameEngineCommand command){
-        String log = user.getName() + "," + command.toString();
+    public void addToHistory(Player Player, GameEngineCommand command){
+        String log = Player.getName() + "," + command.toString();
         history.add(log);
     }
 }

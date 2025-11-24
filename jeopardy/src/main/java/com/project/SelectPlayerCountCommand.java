@@ -2,9 +2,9 @@ package com.project;
 
 public class SelectPlayerCountCommand implements GameEngineCommand {
     
-    private final GameEngine gameEngine;
+    private final GameInitialization gameEngine;
 
-    public SelectPlayerCountCommand(GameEngine gameEngine) {
+    public SelectPlayerCountCommand(GameInitialization gameEngine) {
         this.gameEngine = gameEngine;
     }
 
