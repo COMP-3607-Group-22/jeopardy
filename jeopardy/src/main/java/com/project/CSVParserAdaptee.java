@@ -34,6 +34,8 @@ public class CSVParserAdaptee implements ParserAdaptee {
                     
                     } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
                         System.err.println("Not expected format: " + e.getMessage());
+                    } catch (IllegalStateException e) {
+                        System.err.println("Builder validation failed: " + e.getMessage());
                     }
                 }
             }

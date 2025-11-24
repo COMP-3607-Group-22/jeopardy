@@ -14,4 +14,6 @@ public class StartGameCommand implements GameEngineCommand {
 
     @Override
     public String toString() {
+        return "StartGameCommand{}";
+    }
 }

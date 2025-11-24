@@ -1,0 +1,70 @@
+-------------------------------------------------------------------------------
+Test set: com.project.CoreTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.project.CoreTests
+testSkipInvalidObject  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Syntax error on token(s), misplaced construct(s)
+	Syntax error on token(s), misplaced construct(s)
+	The type JSONParserAdapteeTest is already defined
+	parser cannot be resolved
+	parser cannot be resolved
+	parser cannot be resolved
+	Syntax error on token "}", delete this token
+	testDir cannot be resolved
+	Syntax error on token(s), misplaced construct(s)
+	The type JSONParserAdapteeTest is already defined
+	Package annotations must be in file package-info.java
+	The type JSONParserAdapteeTest is already defined
+	Syntax error on token "}", delete this token
+	The type ErrorHandlingTests is already defined
+	The type BuilderIntegrationTests is already defined
+	Syntax error on token "}", delete this token
+
+	at com.project.CoreTests.<init>(JSONParserAdapteeTest.java:1)
+
+testNonExistentFile  Time elapsed: 0 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Syntax error on token(s), misplaced construct(s)
+	Syntax error on token(s), misplaced construct(s)
+	The type JSONParserAdapteeTest is already defined
+	parser cannot be resolved
+	parser cannot be resolved
+	parser cannot be resolved
+	Syntax error on token "}", delete this token
+	testDir cannot be resolved
+	Syntax error on token(s), misplaced construct(s)
+	The type JSONParserAdapteeTest is already defined
+	Package annotations must be in file package-info.java
+	The type JSONParserAdapteeTest is already defined
+	Syntax error on token "}", delete this token
+	The type ErrorHandlingTests is already defined
+	The type BuilderIntegrationTests is already defined
+	Syntax error on token "}", delete this token
+
+	at com.project.CoreTests.<init>(JSONParserAdapteeTest.java:1)
+
+testSingleValidParse  Time elapsed: 0 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Syntax error on token(s), misplaced construct(s)
+	Syntax error on token(s), misplaced construct(s)
+	The type JSONParserAdapteeTest is already defined
+	parser cannot be resolved
+	parser cannot be resolved
+	parser cannot be resolved
+	Syntax error on token "}", delete this token
+	testDir cannot be resolved
+	Syntax error on token(s), misplaced construct(s)
+	The type JSONParserAdapteeTest is already defined
+	Package annotations must be in file package-info.java
+	The type JSONParserAdapteeTest is already defined
+	Syntax error on token "}", delete this token
+	The type ErrorHandlingTests is already defined
+	The type BuilderIntegrationTests is already defined
+	Syntax error on token "}", delete this token
+
+	at com.project.CoreTests.<init>(JSONParserAdapteeTest.java:1)
+
