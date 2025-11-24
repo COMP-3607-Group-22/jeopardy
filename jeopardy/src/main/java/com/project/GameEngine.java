@@ -87,8 +87,13 @@ public class GameEngine {
                 this.currentQuestion = q;
                 System.out.println("You have choosen the question for $" + chosenQuestion);
                 found=true;
-            }
+            } 
         }
+        if(found == false){
+            System.out.println("Invalid Question Choice.\n");
+            selectQuestion();
+        }
+        
         System.out.println("For $" + currentQuestion.getValue() + "\n" + currentQuestion.getQuestion() + "\n" + currentQuestion.getOptions());
     }
 
