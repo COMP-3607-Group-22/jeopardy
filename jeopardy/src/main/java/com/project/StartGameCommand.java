@@ -7,8 +7,11 @@ public class StartGameCommand implements GameEngineCommand {
         this.gameEngine = gameEngine;
     }
 
-    @Override 
+    @Override
     public void execute() {
         gameEngine.startGame();
     }
+
+    @Override
+    public String toString() {
 }

@@ -12,7 +12,7 @@ public class GameEngine {
     private String currentCategory = null;
     private Question currentQuestion = null;
     private int pc;
-    ArrayList<Player> players = new ArrayList<>();
+    ArrayList<User> players = new ArrayList<>();
     CSVParserAdaptee parser = new CSVParserAdaptee();
     List<Question> questions = parser.parse("jeopardy/src/main/resources/sample_game_CSV.csv");
     CategoryManager category = new CategoryManager();
@@ -35,7 +35,7 @@ public class GameEngine {
         for(int x=1; x<=pc; x++){
             System.out.println("Enter the name of this player.");
             String name = scanner.nextLine();
-            this.players.add(new Player(name));
+            this.players.add(new User(name));
     }
     }
 
