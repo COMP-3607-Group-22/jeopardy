@@ -11,7 +11,10 @@ public class GameEngine {
 
     private String currentCategory = null;
     private Question currentQuestion = null;
+    private Player currentPlayer = null;
     private int pc;
+    private int currentPlayerIndex = 0;
+    private int totalTurns = 0;
     ArrayList<Player> players = new ArrayList<>();
     CSVParserAdaptee parser = new CSVParserAdaptee();
     List<Question> questions = parser.parse("jeopardy/src/main/resources/sample_game_CSV.csv");
@@ -40,6 +43,10 @@ public class GameEngine {
             System.out.println("Enter the name of this player.");
             String name = scanner.nextLine();
             this.players.add(new Player(name));
+    }
+        if (!this.players.isEmpty()) {
+        this.currentPlayer = this.players.get(0);
+        System.out.println("\n--- Starting game with " + this.currentPlayer.getName() + " ---");
     }
     }
 
@@ -104,11 +111,14 @@ public class GameEngine {
 
         if(givenAnswer.equals(currentQuestion.getAnswer())){
             System.out.println("You got the answer correct! yay");
-
+            currentPlayer.score = currentPlayer.getScore() + currentQuestion.getValue();
+            System.out.println("Your new score is " + currentPlayer.getScore());
         }
         else{
             System.out.println("The correct answer was: " + currentQuestion.getAnswer());
+            System.out.println("Your new score is " + currentPlayer.getScore());
         }
+        
         category.removeQuestion(this.currentCategory, this.currentQuestion); //removes questions from list
 
         List<Question> remainingQuestions = category.getQuestions(this.currentCategory); //remove empty categories from list
@@ -116,8 +126,19 @@ public class GameEngine {
             category.removeCategory(this.currentCategory);
         }
 
+        this.totalTurns++;
         this.currentQuestion = null;
         this.currentCategory = null;
+        this.nextPlayerTurn();
+    }
+
+    public void nextPlayerTurn() {
+  
+    this.currentPlayerIndex = (this.currentPlayerIndex + 1) % this.players.size();
+    this.currentPlayer = this.players.get(this.currentPlayerIndex);
+    
+    System.out.println("\nIt is now " + this.currentPlayer.getName() + "'s turn!\n");
+    
     }
 
     public void exitGame(){
@@ -143,4 +164,7 @@ public class GameEngine {
     public Question getCurrentQuestion() {
         return this.currentQuestion;
     }
+    public int getTotalTurnsPlayed() {
+    return this.totalTurns;
+}
 }

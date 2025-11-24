@@ -5,7 +5,7 @@ public class Player {
 
     private final String id;
     private final String name;
-    private final int score;
+    int score;
 
     public Player(String name) {
         this.id = UUID.randomUUID().toString(); 
