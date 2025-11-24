@@ -23,5 +23,4 @@ public class Question {
     public ArrayList<String> getOptions(){return this.options;}
     public String getAnswer(){return this.answer;}
 
-    
 }

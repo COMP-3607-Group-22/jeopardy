@@ -1,9 +1,9 @@
 package com.project;
 
 public class EnterPlayerNameCommand implements GameEngineCommand{
-    private final GameEngine gameEngine;
+    private final GameInitialization gameEngine;
 
-    public EnterPlayerNameCommand(GameEngine gameEngine) {
+    public EnterPlayerNameCommand(GameInitialization gameEngine) {
         this.gameEngine = gameEngine;
     }
 

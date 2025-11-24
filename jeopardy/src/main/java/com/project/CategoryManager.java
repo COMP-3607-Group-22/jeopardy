@@ -1,19 +1,29 @@
 package com.project;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Set;
 import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class CategoryManager {
-    private Map<String, List<Question>> categories = new LinkedHashMap<>();
+    private final Map<String, List<Question>> categories = new LinkedHashMap<>();
 
 public void addQuestion(Question question) {
     categories.computeIfAbsent(question.getCategory(), k -> new ArrayList<>()).add(question);
 }
 
+public void removeQuestion(String categoryName, Question questionToRemove) {
+    List<Question> list = categories.get(categoryName);
+    if (list != null) {
+        list.remove(questionToRemove);  
+    }
+}
+public void removeCategory(String categoryName) {
+        categories.remove(categoryName);
+    }
+    
 public List<Question> getQuestions(String category) {
     return categories.getOrDefault(category, List.of());
 }

@@ -2,9 +2,9 @@ package com.project;
 
 public class ExitCommand implements GameEngineCommand {
 
-    private final GameEngine gameEngine;
+    private final GameInitialization gameEngine;
 
-    public ExitCommand(GameEngine gameEngine) {
+    public ExitCommand(GameInitialization gameEngine) {
         this.gameEngine = gameEngine;
     }
 

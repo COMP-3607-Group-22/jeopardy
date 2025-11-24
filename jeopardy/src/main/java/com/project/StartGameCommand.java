@@ -1,9 +1,9 @@
 package com.project;
 
 public class StartGameCommand implements GameEngineCommand {
-    private final GameEngine gameEngine;
+    private final GameInitialization gameEngine;
 
-    public StartGameCommand(GameEngine gameEngine){
+    public StartGameCommand(GameInitialization gameEngine){
         this.gameEngine = gameEngine;
     }
 
