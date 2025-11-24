@@ -11,7 +11,4 @@ public class StartGameCommand implements GameEngineCommand {
     public void execute() {
         gameEngine.startGame();
     }
-
-    @Override
-    public String toString() {
 }
