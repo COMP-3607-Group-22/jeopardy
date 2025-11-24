@@ -93,7 +93,7 @@ public class GameEngine {
             System.out.println("Invalid Question Choice.\n");
             selectQuestion();
         }
-        
+
         System.out.println("For $" + currentQuestion.getValue() + "\n" + currentQuestion.getQuestion() + "\n" + currentQuestion.getOptions());
     }
 
@@ -109,8 +109,13 @@ public class GameEngine {
         else{
             System.out.println("The correct answer was: " + currentQuestion.getAnswer());
         }
-        category.removeQuestion(this.currentCategory, this.currentQuestion);
-        
+        category.removeQuestion(this.currentCategory, this.currentQuestion); //removes questions from list
+
+        List<Question> remainingQuestions = category.getQuestions(this.currentCategory); //remove empty categories from list
+        if (remainingQuestions.isEmpty()) {
+            category.removeCategory(this.currentCategory);
+        }
+
         this.currentQuestion = null;
         this.currentCategory = null;
     }

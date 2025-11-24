@@ -20,7 +20,10 @@ public void removeQuestion(String categoryName, Question questionToRemove) {
         list.remove(questionToRemove);  
     }
 }
-
+public void removeCategory(String categoryName) {
+        categories.remove(categoryName);
+    }
+    
 public List<Question> getQuestions(String category) {
     return categories.getOrDefault(category, List.of());
 }
