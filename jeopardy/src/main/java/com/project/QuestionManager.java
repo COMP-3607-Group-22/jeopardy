@@ -8,9 +8,10 @@ public class QuestionManager {
         questions = new ArrayList<>();
     }
 
-    public void buildQuestions(String fileName){
+    public boolean buildQuestions(String fileName){
         FileParser parser = new ParserAdapter(fileName);
         questions = parser.parse(fileName);
+        return !questions.isEmpty();
     }
 
     public ArrayList<Question> getQuestions() {

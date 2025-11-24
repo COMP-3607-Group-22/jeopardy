@@ -1,19 +1,19 @@
 package com.project;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
 
-public class GameInvoker {
-    private Stack<GameEngineCommand> history = new Stack<>();
+public class GameInvoker{
+    private ArrayList<String> history = new ArrayList<>();
+    private User user;
 
-    public GameInvoker() {
-        
+    public ArrayList<String> getHistory(){return this.history;}
+
+    public void runCommand(User user, GameEngineCommand command){
+        command.execute();
+        addToHistory(user, command);
     }
 
-    public List<GameEngineCommand> gethistory(){return new ArrayList<>(history);}
-
-    public void runCommand(GameEngineCommand command){
-        command.execute();
-        history.push(command);
+    public void addToHistory(User user, GameEngineCommand command){
+        String log = user.getName() + "," + command.toString();
+        history.add(log);
     }
 }

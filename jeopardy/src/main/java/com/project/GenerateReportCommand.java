@@ -8,7 +8,7 @@ public class GenerateReportCommand implements GameEngineCommand {
         this.gameEngine = gameEngine;
     }
 
-    @Override 
+    @Override
     public void execute() {
         gameEngine.generateReport();
     }
