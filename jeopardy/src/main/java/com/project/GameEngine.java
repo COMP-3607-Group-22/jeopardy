@@ -2,6 +2,7 @@ package com.project;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -68,13 +69,25 @@ public class GameEngine {
         
 }
 
-
-    public void selectQuestion(int value,ArrayList<Question> questions){
-        for (Question q : questions){
-            if(q.getCategory().equals(currentCategory) && q.getValue() == value){
-                currentQuestion = q;
+    public void selectQuestion(){
+        boolean found = false;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Select a question by inputting the dollar value (The $ is there already)");
+        List<Question> list = category.getQuestions(this.currentCategory);
+        Collections.sort(list, (a,b) -> a.getValue() - b.getValue());
+        for (Question q : list) {
+            System.out.println("$" + q.getValue());
             }
-        }
+        int chosenQuestion = scanner.nextInt();
+        for (Question q : list) {
+            if(chosenQuestion == q.getValue()){
+                this.currentQuestion = q;
+                System.out.println("You have choosen the question for $" + chosenQuestion);
+                found=true;
+            }
+            }
+        System.out.println("For $" + currentQuestion.getValue() + "\n" + currentQuestion.getQuestion() + "\n" + currentQuestion.getOptions());
+
     }
 
     public void answerQuestion(){
