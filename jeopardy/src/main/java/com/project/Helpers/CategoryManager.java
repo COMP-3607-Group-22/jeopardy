@@ -1,4 +1,4 @@
-package com.project.Categories;
+package com.project.Helpers;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,6 +6,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.project.Questions.Question;
 
 public class CategoryManager {
     private final Map<String, List<Question>> categories = new LinkedHashMap<>();

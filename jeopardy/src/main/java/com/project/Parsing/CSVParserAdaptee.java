@@ -6,8 +6,8 @@ import java.util.Arrays;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
-import com.project.Categories.Question;
-import com.project.Categories.QuestionBuilder;
+import com.project.Questions.Question;
+import com.project.Questions.QuestionBuilder;
 
 public class CSVParserAdaptee implements ParserAdaptee {
     private final ArrayList<Question> questions;

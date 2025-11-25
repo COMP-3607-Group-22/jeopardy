@@ -8,8 +8,8 @@ import java.util.Arrays;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.project.Categories.Question;
-import com.project.Categories.QuestionBuilder;
+import com.project.Questions.Question;
+import com.project.Questions.QuestionBuilder;
 
 public class JSONParserAdaptee implements ParserAdaptee {
     private ArrayList<Question> questions;

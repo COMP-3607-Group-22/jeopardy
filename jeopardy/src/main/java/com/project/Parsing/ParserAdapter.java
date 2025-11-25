@@ -2,7 +2,7 @@ package com.project.Parsing;
 
 import java.util.ArrayList;
 
-import com.project.Categories.Question;
+import com.project.Questions.Question;
 
 // Adapter Pattern - Adapter
 public class ParserAdapter implements FileParser {

@@ -1,4 +1,4 @@
-package com.project.Categories;
+package com.project.Questions;
 import java.util.ArrayList;
 
 public class Question {

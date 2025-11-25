@@ -24,4 +24,13 @@ public class Player {
     public int getScore() {
         return score;
     }
+
+    public void setScore(int value){
+        this.score += value;
+    }
+
+    @Override
+    public String toString(){
+        return this.name;
+    }
 }

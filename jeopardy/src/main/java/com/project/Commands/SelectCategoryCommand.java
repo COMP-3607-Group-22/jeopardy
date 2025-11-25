@@ -1,6 +1,7 @@
 package com.project.Commands;
 
 import com.project.Gameplay.GameEngine;
+import com.project.Helpers.LogHelper;
 
 public class SelectCategoryCommand implements GameCommand {
 
@@ -8,10 +9,17 @@ public class SelectCategoryCommand implements GameCommand {
 
     public SelectCategoryCommand(GameEngine gameEngine){
         this.gameEngine = gameEngine;
-        
     }
-    @Override 
+
+    @Override
     public void execute(){
         gameEngine.selectCategory();
+    }
+
+    @Override
+    public String toString(){
+        return "Select Category," + new LogHelper().getTimeStamp()
+        + gameEngine.getCurrentCategory() + ",,,,"
+        + gameEngine.getCurrentPlayer().getScore();
     }
 }

@@ -1,4 +1,4 @@
-package com.project.Categories;
+package com.project.Questions;
 import java.util.ArrayList;
 
 import com.project.Parsing.FileParser;
@@ -6,18 +6,23 @@ import com.project.Parsing.ParserAdapter;
 
 public class QuestionManager {
     private ArrayList<Question> questions;
+    private boolean status;
 
     public QuestionManager(){
         questions = new ArrayList<>();
     }
 
-    public boolean buildQuestions(String fileName){
+    public void buildQuestions(String fileName){
         FileParser parser = new ParserAdapter(fileName);
         questions = parser.parse(fileName);
-        return !questions.isEmpty();
+        status = !questions.isEmpty();
     }
 
     public ArrayList<Question> getQuestions() {
         return questions;
+    }
+
+    public boolean getStatus(){
+        return status;
     }
 }

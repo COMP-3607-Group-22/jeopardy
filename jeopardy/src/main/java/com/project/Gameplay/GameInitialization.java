@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.project.Categories.CategoryManager;
-import com.project.Categories.Question;
+import com.project.Helpers.CategoryManager;
 import com.project.Parsing.CSVParserAdaptee;
+import com.project.Questions.Question;
 
 public class GameInitialization {
 
-    private Player currentPlayer = null;
-    
     private int pc;
 
     ArrayList<Player> players = new ArrayList<>();
@@ -36,19 +34,15 @@ public class GameInitialization {
 
     public void enterPlayerName(){
         Scanner scanner = new Scanner(System.in);
-        
-        for(int x=1; x<=pc; x++){
+
+        if(this.players.size() < this.pc){
             System.out.println("Enter the name of this player.");
             String name = scanner.nextLine();
             this.players.add(new Player(name));
-    }
-        if (!this.players.isEmpty()) {
-        this.currentPlayer = this.players.get(0);
-    }
-    }
-
-    public void exitGame(){
-        System.exit(0);
+        }else{
+            System.out.println("All players have been entered.");
+            return;
+        }
     }
 
     public ArrayList<Player> getPlayers(){
@@ -56,7 +50,6 @@ public class GameInitialization {
     }
 
     public CategoryManager getCategoryManager() {
-    return this.category;
-}
-
+        return this.category;
+    }
 }

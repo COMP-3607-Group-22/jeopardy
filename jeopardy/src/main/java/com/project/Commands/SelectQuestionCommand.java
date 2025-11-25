@@ -1,6 +1,7 @@
 package com.project.Commands;
 
 import com.project.Gameplay.GameEngine;
+import com.project.Helpers.LogHelper;
 
 public class SelectQuestionCommand implements GameCommand {
    
@@ -11,8 +12,13 @@ public class SelectQuestionCommand implements GameCommand {
     
     }
 
-    @Override 
+    @Override
     public void execute() {
-        gameEngine.selectQuestion(); 
+        gameEngine.selectQuestion();
+    }
+
+    @Override
+    public String toString(){
+        return "Select Question," + new LogHelper().getTimeStamp() + gameEngine.getCurrentCategory() + "," + gameEngine.getCurrentQuestion().getValue() + ",,," + gameEngine.getCurrentPlayer().getScore();
     }
 }
