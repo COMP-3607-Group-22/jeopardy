@@ -19,6 +19,6 @@ public class StartGameCommand implements GameCommand {
 
     @Override
     public String toString(){
-        return "Start Game," + new LogHelper().getTimeStamp() + ",,,,";
+        return "System,Start Game," + new LogHelper().getTimeStamp() + ",,,,";
     }
 }

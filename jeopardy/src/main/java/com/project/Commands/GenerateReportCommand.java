@@ -21,6 +21,6 @@ public class GenerateReportCommand implements GameCommand {
 
     @Override
     public String toString(){
-        return "Generate Report," + new LogHelper().getTimeStamp() + ",,,N/A,";
+        return "System,Generate Report," + new LogHelper().getTimeStamp() + ",,,N/A,";
     }
 }
