@@ -5,18 +5,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.project.Helpers.EventLogHelper;
+import com.project.Helpers.*;
 
 public class GameTermination{
     public void generateEventLog(EventLogHelper eventLogHelper){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("jeopardy/src/main/resources/game_event_log.csv"))) {
             for (String[] row : parseHistoryToData(eventLogHelper.getEventLogs())) {
-                for(int i=0; i<row.length; i++){
-                    if(row[i] == null){
-                        row[i] = "";
-                    }
-                }
-                writer.write(String.join(",", row));
+                writer.write(String.join(",", resolveNulls(row)));
                 writer.newLine();
             }
 
@@ -25,9 +20,9 @@ public class GameTermination{
         }
     }
 
-    public void generateReport(ArrayList<String> report){
+    public void generateReport(ReportHelper reportHelper){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("jeopardy/src/main/resources/game_report.txt"))) {
-            for (String row : report) {
+            for (String row : reportHelper.getReport()) {
                 writer.write(row);
                 writer.newLine();
             }
@@ -35,10 +30,6 @@ public class GameTermination{
         } catch (IOException e) {
             System.err.println("Error writing to file: " + e.getMessage());
         }
-    }
-
-    public void exitGame(){
-        System.exit(0);
     }
 
     public String[][] parseHistoryToData(ArrayList<String> history) {
@@ -49,5 +40,14 @@ public class GameTermination{
             System.arraycopy(fields, 0, data[i], 0, Math.min(fields.length, 9));
         }
         return data;
+    }
+
+    public String[] resolveNulls(String[] row){
+        for(int i = 0; i < row.length; i++){
+            if(row[i] == null){
+                row[i] = "";
+            }
+        }
+        return row;
     }
 }

@@ -46,8 +46,7 @@ public class Gameplay {
 
     public void exitGame(){
         GameTermination gameTermination = new GameTermination();
-        gameEngine.finalScores();
-        gameInvoker.executeCommand(new GenerateReportCommand(gameTermination, gameEngine.getReport()));
+        gameInvoker.executeCommand(new GenerateReportCommand(gameTermination, gameEngine.getReportHelper()));
         gameInvoker.executeCommand(new GenerateEventLogCommand(gameTermination, gameInvoker.getEventLogHelper()));
     }
 }
