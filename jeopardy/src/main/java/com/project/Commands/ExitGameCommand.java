@@ -1,23 +1,23 @@
 package com.project.Commands;
 
-import com.project.Gameplay.GameTermination;
+import com.project.Gameplay.Gameplay;
 import com.project.Helpers.LogHelper;
 
 public class ExitGameCommand implements GameCommand {
 
-    private final GameTermination gameTerm;
+    private final Gameplay gameplay;
 
-    public ExitGameCommand(GameTermination gameTerm) {
-        this.gameTerm = gameTerm;
+    public ExitGameCommand(Gameplay gameplay) {
+        this.gameplay = gameplay;
     }
 
     @Override 
     public void execute() {
-        gameTerm.exitGame();
+        gameplay.exitGame();
     }
 
     @Override
     public String toString(){
-        return "Exit Game," + new LogHelper().getTimeStamp() + ",,,,";
+        return "System,Exit Game," + new LogHelper().getTimeStamp() + ",,,,";
     }
 }

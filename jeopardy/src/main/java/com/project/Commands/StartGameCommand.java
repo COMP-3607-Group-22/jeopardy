@@ -1,20 +1,18 @@
 package com.project.Commands;
 
-import com.project.Gameplay.*;
+import com.project.Gameplay.Gameplay;
 import com.project.Helpers.LogHelper;
 
 public class StartGameCommand implements GameCommand {
     private final Gameplay gameplay;
-    private GameInvoker gameInvoker;
 
-    public StartGameCommand(Gameplay gameplay, GameInvoker gameInvoker){
+    public StartGameCommand(Gameplay gameplay){
         this.gameplay = gameplay;
-        this.gameInvoker = gameInvoker;
     }
 
     @Override
     public void execute() {
-        gameplay.startGame(gameInvoker);
+        gameplay.startGame();
     }
 
     @Override

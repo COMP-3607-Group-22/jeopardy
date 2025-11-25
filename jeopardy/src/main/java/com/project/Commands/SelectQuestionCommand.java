@@ -19,6 +19,12 @@ public class SelectQuestionCommand implements GameCommand {
 
     @Override
     public String toString(){
-        return gameEngine.getCurrentPlayer() + ",Select Question," + new LogHelper().getTimeStamp() + gameEngine.getCurrentCategory() + "," + gameEngine.getCurrentQuestion().getValue() + ",,," + gameEngine.getCurrentPlayer().getScore();
+        if(gameEngine.getCurrentQuestion() != null){
+                return gameEngine.getCurrentPlayer() + ",Select Question," + new LogHelper().getTimeStamp()
+                + gameEngine.getCurrentCategory() + ","
+                + gameEngine.getCurrentQuestion().getValue() + ",,,"
+                + gameEngine.getCurrentPlayer().getScore();
+            }
+        return "";
     }
 }
