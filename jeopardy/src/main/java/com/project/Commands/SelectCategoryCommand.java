@@ -18,7 +18,7 @@ public class SelectCategoryCommand implements GameCommand {
 
     @Override
     public String toString(){
-        return "Select Category," + new LogHelper().getTimeStamp()
+        return gameEngine.getCurrentPlayer() + ",Select Category," + new LogHelper().getTimeStamp()
         + gameEngine.getCurrentCategory() + ",,,,"
         + gameEngine.getCurrentPlayer().getScore();
     }

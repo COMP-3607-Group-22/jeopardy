@@ -1,6 +1,6 @@
 package com.project.Commands;
 
-import com.project.Gameplay.GameInitialization;
+import com.project.Gameplay.*;
 import com.project.Helpers.LogHelper;
 
 public class EnterPlayerNameCommand implements GameCommand{
@@ -17,8 +17,9 @@ public class EnterPlayerNameCommand implements GameCommand{
 
     @Override
     public String toString(){
-        return "Enter Player Name," + new LogHelper().getTimeStamp() 
-        + ",," + gameInit.getPlayers().get(gameInit.getPlayers().size() - 1) + ",N/A,";
+        Player player = gameInit.getPlayers().get(gameInit.getPlayers().size() - 1);
+        return player +  ",Enter Player Name," + new LogHelper().getTimeStamp() 
+        + ",," + player + ",N/A,";
     }
 }
 
