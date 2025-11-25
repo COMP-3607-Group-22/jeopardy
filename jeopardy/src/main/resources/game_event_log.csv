@@ -1,21 +1,14 @@
 Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
-GAME001,System,Start Game,2025-11-25T15:04:32,,,,,
-GAME001,System,Load File,2025-11-25T15:04:36,,,,Success,
-GAME001,System,Select Player Count,2025-11-25T15:04:40,,,2,N/A,
-GAME001,Alice,Enter Player Name,2025-11-25T15:04:41,,,Alice,N/A,
-GAME001,Bob,Enter Player Name,2025-11-25T15:04:42,,,Bob,N/A,
-GAME001,Alice,Select Category,2025-11-25T15:04:45,Arrays,,,,0
-GAME001,Alice,Select Question,2025-11-25T15:04:47,Arrays,100,,,0
-GAME001,Alice,Answer Question,2025-11-25T15:05:02,Arrays,100,A,Correct,100
-GAME001,Bob,Select Category,2025-11-25T15:05:15,File Handling,,,,0
-GAME001,Bob,Select Question,2025-11-25T15:05:17,File Handling,100,,,0
-GAME001,Bob,Answer Question,2025-11-25T15:05:23,File Handling,100,B,Incorrect,0
-GAME001,Alice,Select Category,2025-11-25T15:44:15,Arrays,,,,100
-GAME001,Alice,Select Question,2025-11-25T15:44:17,Arrays,200,,,100
-GAME001,Alice,Answer Question,2025-11-25T15:44:21,Arrays,200,B,Correct,300
-GAME001,Bob,Select Category,2025-11-25T15:44:25,Arrays,,,,0
-GAME001,Bob,Select Question,2025-11-25T15:44:27,Arrays,400,,,0
-GAME001,System,Start Game,2025-11-25T15:44:33,,,,,
-GAME001,System,Exit Game,2025-11-25T15:44:33,,,,,
-GAME001,System,Generate Report,2025-11-25T15:44:33,,,,N/A,
-GAME001,System,Generate Event Log,2025-11-25T15:44:33,,,,N/A,
+GAME001,System,Start Game,2025-11-25T18:22:46,,,,,
+GAME001,System,Load File,2025-11-25T18:22:51,,,,Success,
+GAME001,System,Select Player Count,2025-11-25T18:22:53,,,1,N/A,
+GAME001,dd,Enter Player Name,2025-11-25T18:22:54,,,dd,N/A,
+GAME001,dd,Select Category,2025-11-25T18:22:56,Arrays,,,,0
+GAME001,dd,Select Question,2025-11-25T18:22:57,Arrays,100,,,0
+GAME001,dd,Answer Question,2025-11-25T18:22:58,Arrays,100,A,Correct,100
+GAME001,dd,Select Category,2025-11-25T18:23:12,Variables & Data Types,,,,100
+GAME001,dd,Select Question,2025-11-25T18:23:14,Variables & Data Types,200,,,100
+GAME001,System,Start Game,2025-11-25T18:23:17,,,,,
+GAME001,System,Exit Game,2025-11-25T18:23:17,,,,,
+GAME001,System,Generate Report,2025-11-25T18:23:17,,,,N/A,
+GAME001,System,Generate Event Log,2025-11-25T18:23:17,,,,N/A,
