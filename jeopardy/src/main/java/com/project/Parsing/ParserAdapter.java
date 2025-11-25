@@ -9,14 +9,15 @@ public class ParserAdapter implements FileParser {
     private ParserAdaptee parser;
 
     public ParserAdapter(String fileName) {
-        if (fileName == null || fileName.isEmpty()) {
+        String newFileName = "jeopardy/src/main/resources/" + fileName;
+        if (newFileName == null || newFileName.isEmpty()) {
             throw new IllegalArgumentException("fileName is null or empty");
         }
-        int index = fileName.lastIndexOf('.');
-        if (index < 0 || index == fileName.length() - 1) {
+        int index = newFileName.lastIndexOf('.');
+        if (index < 0 || index == newFileName.length() - 1) {
             throw new IllegalArgumentException("fileName has no extension: " + fileName);
         }
-        selectParserByFormat(fileName.substring(index + 1).toLowerCase());
+        selectParserByFormat(newFileName.substring(index + 1).toLowerCase());
     }
 
     @Override

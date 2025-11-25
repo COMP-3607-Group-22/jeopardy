@@ -9,6 +9,7 @@ import com.project.Questions.Question;
 
 
 public class GameEngine {
+    private ArrayList<String> report;
 
     private String currentCategory = null;
     private Question currentQuestion = null;
@@ -16,7 +17,7 @@ public class GameEngine {
     private Player currentPlayer = null;
     private Player lastPlayer;
     private int currentPlayerIndex = 0;
-    private int totalTurns = 0;
+    private int totalTurns = 1;
 
     CategoryManager category;
     ArrayList<Player> players;
@@ -26,6 +27,8 @@ public class GameEngine {
         this.category = category;
         this.players = players;
         this.currentPlayer = this.players.get(0);
+
+        initReport();
     }
 
     public void selectCategory() {
@@ -87,7 +90,7 @@ public class GameEngine {
         Scanner scanner = new Scanner(System.in);
         this.givenAnswer = scanner.nextLine();
 
-        if(givenAnswer.equals(currentQuestion.getAnswer())){
+        if(isAnswerCorrect()){
             System.out.println("You got the answer correct! yay");
             currentPlayer.setScore(currentQuestion.getValue());
             System.out.println("Your new score is " + currentPlayer.getScore());
@@ -104,6 +107,7 @@ public class GameEngine {
             category.removeCategory(this.currentCategory);
         }
 
+        addTurnSummary();
         this.totalTurns++;
         this.nextPlayerTurn();
     }
@@ -123,15 +127,50 @@ public class GameEngine {
         return this.currentQuestion;
     }
 
-    public int getTotalTurnsPlayed() {
-        return this.totalTurns;
-    }
-
     public Player getCurrentPlayer(){
         return this.currentPlayer;
     }
 
     public Player getLastPlayer(){
         return this.lastPlayer;
+    }
+
+    public ArrayList<String> getReport(){
+        return this.report;
+    }
+
+    public String getGivenAnswer(){
+        return this.givenAnswer;
+    }
+
+    public boolean isAnswerCorrect(){
+        return this.givenAnswer.equals(this.currentQuestion.getAnswer());
+    }
+
+    public void initReport(){
+        this.report = new ArrayList<>();
+
+        this.report.add("JEOPARDY PROGRAMMING GAME REPORT\n"
+        + "================================"
+        + "\nCase ID: "
+        + "\nPlayers" + players.toString()
+        + "\n\nGameplay Summary: "
+        + "\n-----------------\n");
+    }
+
+    public void addTurnSummary(){
+        report.add(
+            "Turn " + this.totalTurns + ": " + this.currentPlayer + " selected " + this.currentCategory + " for " + this.currentQuestion.getValue()
+            + "\nQuestion: " + this.currentQuestion.getQuestion()
+            + "\nAnswer: " + this.givenAnswer + " - " + (this.givenAnswer.equals(this.currentQuestion.getAnswer()) ? "Correct (+" : "Incorrect (-") + this.currentQuestion.getValue() + " pts)"
+            + "\nScore after turn: " + this.currentPlayer + " = " + this.currentPlayer.getScore() + "\n\n"
+        );
+    }
+
+    public void finalScores(){
+        report.add("Final Scores:\n");
+        for(Player p : players){
+            report.add(p.getName() + ": " + p.getScore() + "\n");
+        }
     }
 }

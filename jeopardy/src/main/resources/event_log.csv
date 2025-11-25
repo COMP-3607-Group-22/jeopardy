@@ -1,5 +1,0 @@
-Case_ID,Player_ID,Activity,Timestamp, Category,Question_Value,Answer_Given,Result,Score_After_Play
-System,Load File,2025-11-2403:33:54,,,,Success,null,null
-System,com.project.SelectPlayerCountCommand@470e2030,null,null,null,null,null,null,null
-System,com.project.EnterPlayerNameCommand@e2d56bf,null,null,null,null,null,null,null
-System,com.project.SelectCategoryCommand@1e81f4dc,null,null,null,null,null,null,null

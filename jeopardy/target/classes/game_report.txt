@@ -1,0 +1,34 @@
+JEOPARDY PROGRAMMING GAME REPORT
+================================
+Case ID: 
+Players[3, 4, 2]
+
+Gameplay Summary: 
+-----------------
+
+Turn 1: 3 selected Arrays for 100
+Question: Which declares an array of 5 integers?
+Answer: A - Correct (+100 pts)
+Score after turn: 3 = 100
+
+
+Turn 2: 4 selected File Handling for 400
+Question: Which function closes a file?
+Answer: B - Incorrect (-400 pts)
+Score after turn: 4 = 0
+
+
+Turn 3: 2 selected Arrays for 300
+Question: Which loop is best for iterating a fixed-size array?
+Answer: A - Incorrect (-300 pts)
+Score after turn: 2 = 0
+
+
+Final Scores:
+
+3: 100
+
+4: 0
+
+2: 0
+

@@ -1,25 +1,14 @@
 package com.project.Gameplay;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import com.project.Helpers.CategoryManager;
-import com.project.Parsing.CSVParserAdaptee;
-import com.project.Questions.Question;
 
 public class GameInitialization {
 
     private int pc;
-
     ArrayList<Player> players = new ArrayList<>();
-    CSVParserAdaptee parser = new CSVParserAdaptee();
-    List<Question> questions = parser.parse("jeopardy/src/main/resources/sample_game_CSV.csv");
-    CategoryManager category = new CategoryManager();
-    
-    public void startGame(){
-        this.questions.forEach(this.category::addQuestion);
-    }
 
     public void selectPlayerCount(){
          Scanner scanner = new Scanner(System.in);
@@ -49,7 +38,5 @@ public class GameInitialization {
         return this.players;
     }
 
-    public CategoryManager getCategoryManager() {
-        return this.category;
-    }
+    public int getPlayerCount(){return this.pc;}
 }

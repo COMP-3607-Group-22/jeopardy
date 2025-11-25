@@ -18,7 +18,7 @@ public class EnterPlayerNameCommand implements GameCommand{
     @Override
     public String toString(){
         return "Enter Player Name," + new LogHelper().getTimeStamp() 
-        + ",," + gameInit.getPlayers().get(gameInit.getPlayers().size() - 1) + ",N/A";
+        + ",," + gameInit.getPlayers().get(gameInit.getPlayers().size() - 1) + ",N/A,";
     }
 }
 

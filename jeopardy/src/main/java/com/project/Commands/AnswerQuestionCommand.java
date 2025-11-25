@@ -19,6 +19,8 @@ public class AnswerQuestionCommand implements GameCommand {
         return "Answer Question," + new LogHelper().getTimeStamp()
         + gameEngine.getCurrentCategory() + ","
         + gameEngine.getCurrentQuestion().getValue() + ","
+        + gameEngine.getGivenAnswer() + ","
+        + (gameEngine.isAnswerCorrect() ? "Correct" : "Incorrect") + ","
         + gameEngine.getLastPlayer().getScore();
     }
 }

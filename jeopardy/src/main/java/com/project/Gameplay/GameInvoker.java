@@ -5,21 +5,22 @@ import com.project.Commands.GameCommand;
 
 public class GameInvoker{
     private final ArrayList<String> history = new ArrayList<>();
-    private final int caseID;
+    private final String caseId;
 
-    public GameInvoker(int caseID){
-        this.caseID = caseID;
+    public GameInvoker(String caseId){
+        this.caseId = caseId;
     }
 
-    public void executeCommand(Player player, GameCommand command){
+    public void executeCommand(String invokerUser, GameCommand command){
         command.execute();
-        addToHistory(player, command);
+        addToHistory(invokerUser, command);
     }
 
-    public void addToHistory(Player player, GameCommand command){
-        String log = this.caseID + "," + player.getName() + "," + command.toString();
+    public void addToHistory(String invokerUser, GameCommand command){
+        String log = this.caseId + "," + invokerUser + "," + command.toString();
         history.add(log);
     }
 
     public ArrayList<String> getHistory(){return this.history;}
+    public String getCaseId(){return this.caseId;}
 }
