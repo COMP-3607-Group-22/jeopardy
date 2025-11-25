@@ -66,6 +66,8 @@ public class XMLParserAdaptee implements ParserAdaptee{
 
                     } catch (NullPointerException | NumberFormatException e) {
                         System.err.println("Not expected XML element: " + e.getMessage());
+                    } catch (IllegalStateException e) {
+                        System.err.println("Builder validation failed: " + e.getMessage());
                     }
                 }
             }

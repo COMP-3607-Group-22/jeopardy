@@ -55,6 +55,8 @@ public class JSONParserAdaptee implements ParserAdaptee {
 
                         } catch (NullPointerException | ClassCastException e) {
                             System.err.println("Not expected format: " + e.getMessage());
+                        } catch (IllegalStateException e) {
+                            System.err.println("Builder validation failed: " + e.getMessage());
                         }
                     }
                 }
