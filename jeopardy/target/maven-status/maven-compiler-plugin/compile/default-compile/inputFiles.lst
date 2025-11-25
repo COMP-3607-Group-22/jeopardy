@@ -1,58 +1,28 @@
-<<<<<<< HEAD
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\ExitCommand.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\AnswerQuestionCommand.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\SelectQuestionCommand.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\QuestionBuilder.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\JSONParserAdaptee.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\SelectCategoryCommand.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\CSVParserAdaptee.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\GameInitialization.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\GameEngine.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\QuestionManager.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\GenerateReportCommand.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\LoadFileCommand.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\Main.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\Player.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\FileParser.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\GameInvoker.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\ParserAdapter.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\Question.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\SelectPlayerCountCommand.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\StartGameCommand.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\CategoryManager.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\OutputEventLogCommand.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\GameEngineCommand.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\OutputLogs.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\Builder.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\EnterPlayerNameCommand.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\ParserAdaptee.java
-C:\Users\keyon\Desktop\OOP2\jeopardy\jeopardy\src\main\java\com\project\XMLParserAdaptee.java
-=======
 D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Main.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\ParserAdaptee.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\User.java
 D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Builder.java
 D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\GameInvoker.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\CSVParserAdaptee.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Commands\AnswerQuestionCommand.java
 D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\CategoryManager.java
 D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Question.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\JSONParserAdaptee.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\AnswerQuestionCommand.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\EnterPlayerNameCommand.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Parsing\ParserAdaptee.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Commands\EnterPlayerNameCommand.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Commands\GameCommand.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Commands\LoadFileCommand.java
 D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\GameEngine.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\OutputEventLogCommand.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\StartGameCommand.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\FileParser.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\SelectCategoryCommand.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\SelectQuestionCommand.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\GenerateReportCommand.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Commands\ExitCommand.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Parsing\XMLParserAdaptee.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Parsing\JSONParserAdaptee.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Commands\GenerateReportCommand.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Commands\OutputEventLogCommand.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Commands\SelectCategoryCommand.java
 D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\QuestionBuilder.java
 D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\OutputLogs.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\SelectPlayerCountCommand.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\LoadFileCommand.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Parsing\ParserAdapter.java
 D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\QuestionManager.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\XMLParserAdaptee.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\ExitCommand.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\ParserAdapter.java
-D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\GameEngineCommand.java
->>>>>>> ed6faf37867efe3f1bff09569fea7369c885de23
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Commands\SelectPlayerCountCommand.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Commands\StartGameCommand.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\GameInitialization.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Commands\SelectQuestionCommand.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Parsing\FileParser.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Player.java
+D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\src\main\java\com\project\Parsing\CSVParserAdaptee.java

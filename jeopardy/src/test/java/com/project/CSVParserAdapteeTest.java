@@ -11,6 +11,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import com.project.Categories.Question;
+import com.project.Parsing.CSVParserAdaptee;
+
 public class CSVParserAdapteeTest {
 
     private CSVParserAdaptee parser;
