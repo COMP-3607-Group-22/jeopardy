@@ -152,9 +152,9 @@ public class GameEngine {
 
         this.report.add("JEOPARDY PROGRAMMING GAME REPORT\n"
         + "================================"
-        + "\nCase ID: "
+        + "\nCase ID:"
         + "\nPlayers" + players.toString()
-        + "\n\nGameplay Summary: "
+        + "\n\nGameplay Summary:"
         + "\n-----------------\n");
     }
 

@@ -16,7 +16,7 @@ public class AnswerQuestionCommand implements GameCommand {
 
     @Override
     public String toString(){
-        return "Answer Question," + new LogHelper().getTimeStamp()
+        return gameEngine.getLastPlayer() + ",Answer Question," + new LogHelper().getTimeStamp()
         + gameEngine.getCurrentCategory() + ","
         + gameEngine.getCurrentQuestion().getValue() + ","
         + gameEngine.getGivenAnswer() + ","

@@ -11,13 +11,13 @@ public class GameInvoker{
         this.caseId = caseId;
     }
 
-    public void executeCommand(String invokerUser, GameCommand command){
+    public void executeCommand(GameCommand command){
         command.execute();
-        addToHistory(invokerUser, command);
+        addToHistory(command);
     }
 
-    public void addToHistory(String invokerUser, GameCommand command){
-        String log = this.caseId + "," + invokerUser + "," + command.toString();
+    public void addToHistory(GameCommand command){
+        String log = this.caseId + "," + command.toString();
         history.add(log);
     }
 

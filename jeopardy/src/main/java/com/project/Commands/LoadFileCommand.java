@@ -19,7 +19,7 @@ public class LoadFileCommand implements GameCommand {
 
     @Override
     public String toString(){
-        return "Load File," + new LogHelper().getTimeStamp()
+        return "System,Load File," + new LogHelper().getTimeStamp()
         + ",,," + (this.questionManager.getStatus() ? "Success" : "Failure") + ",";
     }
 }

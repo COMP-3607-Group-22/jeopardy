@@ -21,6 +21,6 @@ public class GenerateEventLogCommand implements GameCommand {
 
     @Override
     public String toString(){
-        return "Generate Event Log," + new LogHelper().getTimeStamp() + ",,,N/A,";
+        return "System,Generate Event Log," + new LogHelper().getTimeStamp() + ",,,N/A,";
     }
 }
