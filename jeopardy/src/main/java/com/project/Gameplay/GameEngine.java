@@ -4,13 +4,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-import com.project.Helpers.CategoryManager;
+import com.project.Helpers.*;
 import com.project.Questions.Question;
 
 
-public class GameEngine {
-    private ArrayList<String> report;
-
+public final class GameEngine {
     private String currentCategory = null;
     private Question currentQuestion = null;
     private String givenAnswer;
@@ -20,16 +18,15 @@ public class GameEngine {
     private int totalTurns = 1;
     private boolean categoryEmpty;
 
-    CategoryManager category;
-    ArrayList<Player> players;
-    
+    private CategoryManager category;
+    private ArrayList<Player> players;
+    private ReportHelper reportHelper;
     
     public GameEngine (CategoryManager category,ArrayList<Player> players){
         this.category = category;
         this.players = players;
         this.currentPlayer = this.players.get(0);
-
-        initReport();
+        this.reportHelper = new ReportHelper(this);
     }
 
     public void selectCategory() {
@@ -154,12 +151,16 @@ public class GameEngine {
         return this.currentPlayer;
     }
 
+    public ArrayList<Player> getPlayers(){
+        return this.players;
+    }
+
     public Player getLastPlayer(){
         return this.lastPlayer;
     }
 
-    public ArrayList<String> getReport(){
-        return this.report;
+    public ReportHelper getReportHelper(){
+        return this.reportHelper;
     }
 
     public String getGivenAnswer(){
@@ -170,30 +171,12 @@ public class GameEngine {
         return this.givenAnswer.equals(this.currentQuestion.getAnswer());
     }
 
-    public void initReport(){
-        this.report = new ArrayList<>();
-
-        this.report.add("JEOPARDY PROGRAMMING GAME REPORT\n"
-        + "================================"
-        + "\nCase ID:"
-        + "\nPlayers" + players.toString()
-        + "\n\nGameplay Summary:"
-        + "\n-----------------\n");
-    }
-
     public void addTurnSummary(){
-        report.add(
+        reportHelper.addTurnSummary(
             "Turn " + this.totalTurns + ": " + this.currentPlayer + " selected " + this.currentCategory + " for " + this.currentQuestion.getValue()
             + "\nQuestion: " + this.currentQuestion.getQuestion()
             + "\nAnswer: " + this.givenAnswer + " - " + (this.givenAnswer.equals(this.currentQuestion.getAnswer()) ? "Correct (+" : "Incorrect (-") + this.currentQuestion.getValue() + " pts)"
             + "\nScore after turn: " + this.currentPlayer + " = " + this.currentPlayer.getScore() + "\n\n"
         );
-    }
-
-    public void finalScores(){
-        report.add("Final Scores:\n");
-        for(Player p : players){
-            report.add(p.getName() + ": " + p.getScore() + "\n");
-        }
     }
 }

@@ -1,24 +1,24 @@
 JEOPARDY PROGRAMMING GAME REPORT
 ================================
 Case ID:
-Players[dd]
+Players[Bob]
 
 Gameplay Summary:
 -----------------
 
-Turn 1: dd selected Arrays for 100
+Turn 1: Bob selected Arrays for 100
 Question: Which declares an array of 5 integers?
 Answer: A - Correct (+100 pts)
-Score after turn: dd = 100
+Score after turn: Bob = 100
 
 
-Turn 2: dd selected Variables & Data Types for 200
-Question: Which data type is used to store a single character?
+Turn 2: Bob selected Arrays for 200
+Question: What is the index of the first element in a C++ array?
 Answer: B - Correct (+200 pts)
-Score after turn: dd = 300
+Score after turn: Bob = 300
 
 
 Final Scores:
 
-dd: 300
+Bob: 300
 
