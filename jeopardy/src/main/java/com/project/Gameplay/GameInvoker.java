@@ -12,17 +12,13 @@ public class GameInvoker{
     }
 
     public void executeCommand(GameCommand command){
-        addEventLog(command);
+        int index = eventLogHelper.logEvent(createLogEntry(command));
         command.execute();
-        updateEventLog(command);
+        eventLogHelper.updateEventLog(index, createLogEntry(command));
     }
 
-    public void addEventLog(GameCommand command){
-        eventLogHelper.logEvent(this.caseId + "," + command.toString());
-    }
-
-    public void updateEventLog(GameCommand command){
-        eventLogHelper.updateEventLog(this.caseId + "," + command.toString());
+    public String createLogEntry(GameCommand command){
+        return this.caseId + "," + command.toString();
     }
 
     public String getCaseId(){return this.caseId;}

@@ -2,21 +2,21 @@ package com.project.Commands;
 import java.util.ArrayList;
 
 import com.project.Gameplay.GameTermination;
-import com.project.Helpers.LogHelper;
+import com.project.Helpers.*;
 
 public class GenerateReportCommand implements GameCommand {
 
     private final GameTermination gameTerm;
-    private ArrayList<String> report;
+    private ReportHelper reportHelper;
 
-    public GenerateReportCommand(GameTermination gameTerm, ArrayList<String> report) {
+    public GenerateReportCommand(GameTermination gameTerm, ReportHelper reportHelper){
         this.gameTerm = gameTerm;
-        this.report = report;
+        this.reportHelper = reportHelper;
     }
 
     @Override
     public void execute(){
-        gameTerm.generateReport(report);
+        gameTerm.generateReport(reportHelper);
     }
 
     @Override
