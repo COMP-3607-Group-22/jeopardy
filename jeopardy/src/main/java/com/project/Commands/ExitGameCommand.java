@@ -3,11 +3,11 @@ package com.project.Commands;
 import com.project.Gameplay.GameTermination;
 import com.project.Helpers.LogHelper;
 
-public class ExitCommand implements GameCommand {
+public class ExitGameCommand implements GameCommand {
 
     private final GameTermination gameTerm;
 
-    public ExitCommand(GameTermination gameTerm) {
+    public ExitGameCommand(GameTermination gameTerm) {
         this.gameTerm = gameTerm;
     }
 

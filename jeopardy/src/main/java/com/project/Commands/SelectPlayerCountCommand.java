@@ -17,7 +17,7 @@ public class SelectPlayerCountCommand implements GameCommand {
 
     @Override
     public String toString(){
-        return "Select Player Count," + new LogHelper().getTimeStamp() + ",," + gameInit.getPlayers().size() + ",N/A";
+        return "Select Player Count," + new LogHelper().getTimeStamp() + ",," + gameInit.getPlayerCount() + ",N/A,";
     }
 }
 
