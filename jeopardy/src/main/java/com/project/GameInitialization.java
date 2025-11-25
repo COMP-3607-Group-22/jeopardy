@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class GameInitialization {
 
     private Player currentPlayer = null;
+    
     private int pc;
 
     ArrayList<Player> players = new ArrayList<>();
@@ -39,7 +40,6 @@ public class GameInitialization {
     }
         if (!this.players.isEmpty()) {
         this.currentPlayer = this.players.get(0);
-        System.out.println("\n--- Starting game with " + this.currentPlayer.getName() + " ---");
     }
     }
 
@@ -48,7 +48,11 @@ public class GameInitialization {
     }
 
     public ArrayList<Player> getPlayers(){
-        return players;
+        return this.players;
     }
+
+    public CategoryManager getCategoryManager() {
+    return this.category;
+}
 
 }

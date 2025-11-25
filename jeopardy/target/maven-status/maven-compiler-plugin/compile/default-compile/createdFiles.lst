@@ -4,7 +4,6 @@ com\project\XMLParserAdaptee.class
 com\project\CSVParserAdaptee.class
 com\project\Main.class
 com\project\GameEngine.class
-com\project\EventLogReportCommand.class
 com\project\SelectCategoryCommand.class
 com\project\ExitCommand.class
 com\project\Player.class
