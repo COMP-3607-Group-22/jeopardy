@@ -1,16 +1,21 @@
 Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
-GAME001,System,Load File,2025-11-25T05:03:24,,,,Success,null
-GAME001,System,Select Player Count,2025-11-25T05:03:26,,,3,N/A,null
-GAME001,System,Enter Player Name,2025-11-25T05:03:27,,,3,N/A,null
-GAME001,System,Enter Player Name,2025-11-25T05:03:30,,,4,N/A,null
-GAME001,System,Enter Player Name,2025-11-25T05:03:30,,,2,N/A,null
-GAME001,3,Select Category,2025-11-25T05:03:33,Arrays,,,,0
-GAME001,3,Select Question,2025-11-25T05:03:34,Arrays,100,,,0
-GAME001,3,Answer Question,2025-11-25T05:03:36,Arrays,100,A,Correct,100
-GAME001,4,Select Category,2025-11-25T05:03:43,File Handling,,,,0
-GAME001,4,Select Question,2025-11-25T05:03:45,File Handling,400,,,0
-GAME001,4,Answer Question,2025-11-25T05:03:52,File Handling,400,B,Incorrect,0
-GAME001,2,Select Category,2025-11-25T05:04:01,Arrays,,,,0
-GAME001,2,Select Question,2025-11-25T05:04:03,Arrays,300,,,0
-GAME001,2,Answer Question,2025-11-25T05:04:06,Arrays,300,A,Incorrect,0
-GAME001,System,Generate Report,2025-11-25T05:04:06,,,,N/A,null
+GAME001,System,Start Game,2025-11-25T15:04:32,,,,,
+GAME001,System,Load File,2025-11-25T15:04:36,,,,Success,
+GAME001,System,Select Player Count,2025-11-25T15:04:40,,,2,N/A,
+GAME001,Alice,Enter Player Name,2025-11-25T15:04:41,,,Alice,N/A,
+GAME001,Bob,Enter Player Name,2025-11-25T15:04:42,,,Bob,N/A,
+GAME001,Alice,Select Category,2025-11-25T15:04:45,Arrays,,,,0
+GAME001,Alice,Select Question,2025-11-25T15:04:47,Arrays,100,,,0
+GAME001,Alice,Answer Question,2025-11-25T15:05:02,Arrays,100,A,Correct,100
+GAME001,Bob,Select Category,2025-11-25T15:05:15,File Handling,,,,0
+GAME001,Bob,Select Question,2025-11-25T15:05:17,File Handling,100,,,0
+GAME001,Bob,Answer Question,2025-11-25T15:05:23,File Handling,100,B,Incorrect,0
+GAME001,Alice,Select Category,2025-11-25T15:44:15,Arrays,,,,100
+GAME001,Alice,Select Question,2025-11-25T15:44:17,Arrays,200,,,100
+GAME001,Alice,Answer Question,2025-11-25T15:44:21,Arrays,200,B,Correct,300
+GAME001,Bob,Select Category,2025-11-25T15:44:25,Arrays,,,,0
+GAME001,Bob,Select Question,2025-11-25T15:44:27,Arrays,400,,,0
+GAME001,System,Start Game,2025-11-25T15:44:33,,,,,
+GAME001,System,Exit Game,2025-11-25T15:44:33,,,,,
+GAME001,System,Generate Report,2025-11-25T15:44:33,,,,N/A,
+GAME001,System,Generate Event Log,2025-11-25T15:44:33,,,,N/A,

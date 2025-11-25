@@ -3,8 +3,6 @@ package com.project.Gameplay;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.project.Helpers.CategoryManager;
-
 public class GameInitialization {
 
     private int pc;
@@ -30,7 +28,6 @@ public class GameInitialization {
             this.players.add(new Player(name));
         }else{
             System.out.println("All players have been entered.");
-            return;
         }
     }
 

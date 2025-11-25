@@ -16,11 +16,14 @@ public class AnswerQuestionCommand implements GameCommand {
 
     @Override
     public String toString(){
-        return gameEngine.getLastPlayer() + ",Answer Question," + new LogHelper().getTimeStamp()
-        + gameEngine.getCurrentCategory() + ","
-        + gameEngine.getCurrentQuestion().getValue() + ","
-        + gameEngine.getGivenAnswer() + ","
-        + (gameEngine.isAnswerCorrect() ? "Correct" : "Incorrect") + ","
-        + gameEngine.getLastPlayer().getScore();
+        if(gameEngine.getGivenAnswer() != null){
+            return gameEngine.getLastPlayer() + ",Answer Question," + new LogHelper().getTimeStamp()
+            + gameEngine.getCurrentCategory() + ","
+            + gameEngine.getCurrentQuestion().getValue() + ","
+            + gameEngine.getGivenAnswer() + ","
+            + (gameEngine.isAnswerCorrect() ? "Correct" : "Incorrect") + ","
+            + gameEngine.getLastPlayer().getScore();
+        }
+        return "";
     }
 }

@@ -1,10 +1,10 @@
 package com.project.Gameplay;
-import java.util.ArrayList;
 
 import com.project.Commands.GameCommand;
+import com.project.Helpers.EventLogHelper;
 
 public class GameInvoker{
-    private final ArrayList<String> history = new ArrayList<>();
+    private EventLogHelper eventLogHelper = new EventLogHelper();
     private final String caseId;
 
     public GameInvoker(String caseId){
@@ -12,15 +12,19 @@ public class GameInvoker{
     }
 
     public void executeCommand(GameCommand command){
+        addEventLog(command);
         command.execute();
-        addToHistory(command);
+        updateEventLog(command);
     }
 
-    public void addToHistory(GameCommand command){
-        String log = this.caseId + "," + command.toString();
-        history.add(log);
+    public void addEventLog(GameCommand command){
+        eventLogHelper.logEvent(this.caseId + "," + command.toString());
     }
 
-    public ArrayList<String> getHistory(){return this.history;}
+    public void updateEventLog(GameCommand command){
+        eventLogHelper.updateEventLog(this.caseId + "," + command.toString());
+    }
+
     public String getCaseId(){return this.caseId;}
+    public EventLogHelper getEventLogHelper(){return this.eventLogHelper;}
 }

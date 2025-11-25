@@ -1,22 +1,22 @@
 package com.project.Commands;
-import java.util.ArrayList;
 
 import com.project.Gameplay.GameTermination;
+import com.project.Helpers.EventLogHelper;
 import com.project.Helpers.LogHelper;
 
 public class GenerateEventLogCommand implements GameCommand {
 
     private final GameTermination gameTerm;
-    private final ArrayList<String> history;
+    private final EventLogHelper eventLogHelper;
 
-    public GenerateEventLogCommand(GameTermination gameTerm, ArrayList<String> history) {
+    public GenerateEventLogCommand(GameTermination gameTerm, EventLogHelper eventLogHelper) {
         this.gameTerm = gameTerm;
-        this.history = history;
+        this.eventLogHelper = eventLogHelper;
     }
 
     @Override
     public void execute() {
-        gameTerm.generateEventLog(history);
+        gameTerm.generateEventLog(eventLogHelper);
     }
 
     @Override

@@ -5,13 +5,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GameTermination{
-    public void generateEventLog(ArrayList<String> history){
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("jeopardy/src/main/resources/game_event_log.csv"))) {
-            writer.write(String.join(",", new String[]{"Case_ID", "Player_ID", "Activity", "Timestamp", "Category", "Question_Value", "Answer_Given", "Result", "Score_After_Play"}));
-            writer.newLine();
+import com.project.Helpers.EventLogHelper;
 
-            for (String[] row : parseHistoryToData(history)) {
+public class GameTermination{
+    public void generateEventLog(EventLogHelper eventLogHelper){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("jeopardy/src/main/resources/game_event_log.csv"))) {
+            for (String[] row : parseHistoryToData(eventLogHelper.getEventLogs())) {
+                for(int i=0; i<row.length; i++){
+                    if(row[i] == null){
+                        row[i] = "";
+                    }
+                }
                 writer.write(String.join(",", row));
                 writer.newLine();
             }

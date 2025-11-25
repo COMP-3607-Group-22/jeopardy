@@ -1,34 +1,38 @@
 JEOPARDY PROGRAMMING GAME REPORT
 ================================
-Case ID: 
-Players[3, 4, 2]
+Case ID:
+Players[Alice, Bob]
 
-Gameplay Summary: 
+Gameplay Summary:
 -----------------
 
-Turn 1: 3 selected Arrays for 100
+Turn 1: Alice selected Arrays for 100
 Question: Which declares an array of 5 integers?
 Answer: A - Correct (+100 pts)
-Score after turn: 3 = 100
+Score after turn: Alice = 100
 
 
-Turn 2: 4 selected File Handling for 400
-Question: Which function closes a file?
-Answer: B - Incorrect (-400 pts)
-Score after turn: 4 = 0
+Turn 2: Bob selected File Handling for 100
+Question: Which header file is used for file I/O?
+Answer: B - Incorrect (-100 pts)
+Score after turn: Bob = 0
 
 
-Turn 3: 2 selected Arrays for 300
-Question: Which loop is best for iterating a fixed-size array?
-Answer: A - Incorrect (-300 pts)
-Score after turn: 2 = 0
+Turn 3: Alice selected Arrays for 200
+Question: What is the index of the first element in a C++ array?
+Answer: B - Correct (+200 pts)
+Score after turn: Alice = 300
+
+
+Turn 4: Bob selected Arrays for 400
+Question: What happens if you access out-of-range index?
+Answer: D - Incorrect (-400 pts)
+Score after turn: Bob = 0
 
 
 Final Scores:
 
-3: 100
+Alice: 300
 
-4: 0
-
-2: 0
+Bob: 0
 
