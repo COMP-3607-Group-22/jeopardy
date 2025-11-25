@@ -4,18 +4,22 @@ import java.util.ArrayList;
 import com.project.Commands.GameCommand;
 
 public class GameInvoker{
-    private ArrayList<String> history = new ArrayList<>();
-    private Player player;
+    private final ArrayList<String> history = new ArrayList<>();
+    private final int caseID;
 
-    public ArrayList<String> getHistory(){return this.history;}
+    public GameInvoker(int caseID){
+        this.caseID = caseID;
+    }
 
-    public void runCommand(Player player, GameCommand command){
+    public void executeCommand(Player player, GameCommand command){
         command.execute();
         addToHistory(player, command);
     }
 
     public void addToHistory(Player player, GameCommand command){
-        String log = player.getName() + "," + command.toString();
+        String log = this.caseID + "," + player.getName() + "," + command.toString();
         history.add(log);
     }
+
+    public ArrayList<String> getHistory(){return this.history;}
 }

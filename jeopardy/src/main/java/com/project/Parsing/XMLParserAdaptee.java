@@ -14,8 +14,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.project.Categories.Question;
-import com.project.Categories.QuestionBuilder;
+import com.project.Questions.Question;
+import com.project.Questions.QuestionBuilder;
 
 public class XMLParserAdaptee implements ParserAdaptee{
     private ArrayList<Question> questions;

@@ -1,6 +1,7 @@
 package com.project.Commands;
 
 import com.project.Gameplay.GameEngine;
+import com.project.Helpers.LogHelper;
 
 public class AnswerQuestionCommand implements GameCommand {
     private final GameEngine gameEngine;
@@ -11,5 +12,13 @@ public class AnswerQuestionCommand implements GameCommand {
     @Override
     public void execute() {
         gameEngine.answerQuestion();
+    }
+
+    @Override
+    public String toString(){
+        return "Answer Question," + new LogHelper().getTimeStamp()
+        + gameEngine.getCurrentCategory() + ","
+        + gameEngine.getCurrentQuestion().getValue() + ","
+        + gameEngine.getLastPlayer().getScore();
     }
 }

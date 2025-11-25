@@ -2,8 +2,6 @@ package com.project;
 
 import java.util.ArrayList;
 
-import com.project.Categories.CategoryManager;
-import com.project.Categories.QuestionManager;
 import com.project.Commands.AnswerQuestionCommand;
 import com.project.Commands.EnterPlayerNameCommand;
 import com.project.Commands.GameCommand;
@@ -17,6 +15,8 @@ import com.project.Gameplay.GameEngine;
 import com.project.Gameplay.GameInitialization;
 import com.project.Gameplay.GameInvoker;
 import com.project.Gameplay.Player;
+import com.project.Helpers.CategoryManager;
+import com.project.Questions.QuestionManager;
 
 public class Main {
     public static void main(String[] args) {

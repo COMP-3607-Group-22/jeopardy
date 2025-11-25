@@ -5,9 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class OutputLogs{
+public class GameTermination{
     public void generateEventLog(ArrayList<String> history){
-        
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("jeopardy/src/main/resources/event_log.csv"))) {
             writer.write(String.join(",", new String[]{"Case_ID", "Player_ID", "Activity", "Timestamp", "Category", "Question_Value", "Answer_Given", "Result", "Score_After_Play"}));
             writer.newLine();
@@ -20,6 +19,14 @@ public class OutputLogs{
         } catch (IOException e) {
             System.err.println("Error writing to CSV file: " + e.getMessage());
         }
+    }
+
+    public void generateReport() {
+
+    }
+
+    public void exitGame(){
+        System.exit(0);
     }
 
     public String[][] parseHistoryToData(ArrayList<String> history) {

@@ -1,16 +1,22 @@
 package com.project.Commands;
 
 import com.project.Gameplay.GameInitialization;
+import com.project.Helpers.LogHelper;
 
 public class StartGameCommand implements GameCommand {
-    private final GameInitialization gameEngine;
+    private final GameInitialization gameInit;
 
-    public StartGameCommand(GameInitialization gameEngine){
-        this.gameEngine = gameEngine;
+    public StartGameCommand(GameInitialization gameInit){
+        this.gameInit = gameInit;
     }
 
     @Override
     public void execute() {
-        gameEngine.startGame();
+        gameInit.startGame();
+    }
+
+    @Override
+    public String toString(){
+        return "Start Game," + new LogHelper().getTimeStamp() + ",,,,";
     }
 }
