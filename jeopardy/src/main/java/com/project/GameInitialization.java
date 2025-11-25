@@ -12,7 +12,7 @@ public class GameInitialization {
 
     ArrayList<Player> players = new ArrayList<>();
     CSVParserAdaptee parser = new CSVParserAdaptee();
-    List<Question> questions = parser.parse("jeopardy/src/main/resources/sample_game_CSV.csv");
+    List<Question> questions = parser.parse("src/main/resources/sample_game_CSV.csv");
     CategoryManager category = new CategoryManager();
     
     public void startGame(){

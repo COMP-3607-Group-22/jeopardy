@@ -1,16 +1,30 @@
 com\project\GameEngineCommand.class
+com\project\SelectPlayerCountCommand.class
 com\project\ParserAdaptee.class
 com\project\XMLParserAdaptee.class
 com\project\CSVParserAdaptee.class
+com\project\EnterPlayerNameCommand.class
 com\project\Main.class
 com\project\GameEngine.class
+<<<<<<< HEAD
+=======
+com\project\AnswerQuestionCommand.class
+>>>>>>> ed6faf37867efe3f1bff09569fea7369c885de23
 com\project\SelectCategoryCommand.class
 com\project\ExitCommand.class
-com\project\Player.class
+com\project\QuestionBuilder.class
 com\project\FileParser.class
 com\project\SelectQuestionCommand.class
+com\project\Question.class
 com\project\CategoryManager.class
 com\project\GenerateReportCommand.class
 com\project\ParserAdapter.class
+com\project\QuestionManager.class
 com\project\LoadFileCommand.class
+com\project\User.class
+com\project\OutputLogs.class
+com\project\StartGameCommand.class
 com\project\JSONParserAdaptee.class
+com\project\GameInvoker.class
+com\project\Builder.class
+com\project\OutputEventLogCommand.class

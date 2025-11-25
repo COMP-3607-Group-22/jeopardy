@@ -15,7 +15,6 @@ public class Main {
         Player SYS = new Player("Sys");
         ArrayList<Player> players = xd.getPlayers();
         players.add(SYS);
-        system.runCommand(SYS, cmd);
         system.runCommand(SYS,cmd6);
     
         CategoryManager category = xd.getCategoryManager();
@@ -33,6 +32,7 @@ public class Main {
         GameEngineCommand cmd3 = new SelectCategoryCommand(xp);
         GameEngineCommand cmd4 = new SelectQuestionCommand(xp);
         GameEngineCommand cmd5 = new AnswerQuestionCommand(xp);
+        GameEngineCommand cmd7 = new AnswerQuestionCommand(xp);
 
         system.runCommand(players.get(0), cmd3);
         system.runCommand(players.get(0), cmd4);
@@ -40,6 +40,7 @@ public class Main {
         system.runCommand(players.get(0), cmd3);
         system.runCommand(players.get(0), cmd4);
         system.runCommand(players.get(0), cmd5);
+        system.runCommand(players.get(0), cmd7);
         
         
         //LoadFileCommand cmd = new LoadFileCommand(manager, "src/main/resources/sample_game_JSON.json");

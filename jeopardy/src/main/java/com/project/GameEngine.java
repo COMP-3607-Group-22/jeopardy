@@ -18,9 +18,11 @@ public class GameEngine {
     CategoryManager category;
     ArrayList<Player> players;
     
+    
     public GameEngine (CategoryManager category,ArrayList<Player> players){
         this.category = category;
         this.players = players;
+        this.currentPlayer = this.players.get(0);
     }
 
     public void selectCategory() {
@@ -33,7 +35,7 @@ public class GameEngine {
             System.out.println(" ");
             System.out.println(cat);
             }
-
+        System.out.println("\n");
         String chosenCategory = scanner.nextLine();
 
         for (String cat : category.getCategoryNames()) {
@@ -50,7 +52,7 @@ public class GameEngine {
             System.out.println("You have choosen " + this.currentCategory);
         }
         
-}
+    }
 
     public void selectQuestion(){
         boolean found = false;
@@ -123,9 +125,10 @@ public class GameEngine {
         }
     }
     
-    public void generateReport(){
-        //Input Logic
-    }
+    public void generateReport() {
+    System.out.println("===== GAME REPORT =====");
+    System.out.println("Total turns played: " + this.totalTurns);
+}
     public String getCurrentCategory() {
         return this.currentCategory;
     }
@@ -133,7 +136,8 @@ public class GameEngine {
     public Question getCurrentQuestion() {
         return this.currentQuestion;
     }
+
     public int getTotalTurnsPlayed() {
-    return this.totalTurns;
-}
+        return this.totalTurns;
+    }
 }
