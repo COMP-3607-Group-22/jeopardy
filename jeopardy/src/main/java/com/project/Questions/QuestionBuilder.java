@@ -12,13 +12,21 @@ public class QuestionBuilder implements Builder {
     private ArrayList<String> options;
     private String answer;
 
+    /**
+     * Create a fresh builder instance.
+     *
+     * @return a new {@code QuestionBuilder}
+     */
     public static QuestionBuilder create(){
-        /**
-         * Create a fresh builder instance.
-         *
-         * @return a new `QuestionBuilder`
-         */
         return new QuestionBuilder();
+    }
+
+    /**
+     * Explicit public constructor so Javadoc documents the builder class
+     * rather than relying on the implicit default constructor.
+     */
+    public QuestionBuilder() {
+        // no-op
     }
 
     @Override

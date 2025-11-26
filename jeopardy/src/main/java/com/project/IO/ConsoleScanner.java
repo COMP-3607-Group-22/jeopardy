@@ -9,20 +9,36 @@ import java.util.Scanner;
 public class ConsoleScanner implements ConsoleIO {
     private final Scanner scanner;
 
+    /**
+     * Create a ConsoleScanner that reads from standard input.
+     */
     public ConsoleScanner() {
         this.scanner = new Scanner(System.in);
     }
 
+    /** 
+     * @return String
+     */
     @Override
     public String readLine() {
         return scanner.nextLine();
     }
 
+    /**
+     * Print a message followed by a newline to standard output.
+     *
+     * @param message the message to print (may be null)
+     */
     @Override
     public void println(String message) {
         System.out.println(message);
     }
 
+    /**
+     * Print a message to standard output without adding a newline.
+     *
+     * @param message the message to print (may be null)
+     */
     @Override
     public void print(String message) {
         System.out.print(message);

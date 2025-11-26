@@ -13,6 +13,12 @@ public final class ReportHelper {
     private final ArrayList<Player> players;
     private String caseId;
 
+    /**
+     * Create a ReportHelper for the supplied players and optional case id.
+     *
+     * @param players list of players participating in the game
+     * @param caseId optional case identifier (may be null and set later)
+     */
     public ReportHelper(ArrayList<Player> players, String caseId){
         this.players = players;
         this.caseId = caseId;
@@ -28,6 +34,9 @@ public final class ReportHelper {
         this.report.add(buildHeader());
     }
 
+    /** 
+     * @return String
+     */
     private String buildHeader(){
         return "JEOPARDY PROGRAMMING GAME REPORT\n"
             + "================================\n"

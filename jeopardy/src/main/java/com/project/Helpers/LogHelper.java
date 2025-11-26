@@ -8,6 +8,13 @@ import java.time.format.DateTimeFormatter;
  */
 public class LogHelper {
     /**
+     * Helper constructor. Adds an explicit constructor so Javadoc can document
+     * the class usage instead of relying on the implicit default constructor.
+     */
+    public LogHelper() {
+        // no-op
+    }
+    /**
      * Return a formatted timestamp string used in event log entries.
      *
      * @return timestamp in the pattern yyyy-MM-dd'T'HH:mm:ss,

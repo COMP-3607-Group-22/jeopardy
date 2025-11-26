@@ -10,6 +10,11 @@ public class SelectCategoryCommand implements GameCommand {
 
     private final GameEngine gameEngine;
 
+    /**
+     * Create the command bound to a GameEngine instance.
+     *
+     * @param gameEngine engine used to select categories
+     */
     public SelectCategoryCommand(GameEngine gameEngine){
         this.gameEngine = gameEngine;
     }

@@ -1,19 +1,17 @@
 package com.project;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import com.project.Gameplay.Player;
 import com.project.Questions.Question;
 import com.project.Questions.QuestionBuilder;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
 
 @DisplayName("Gameplay and Scoring Tests")
 class ScoringTest {
@@ -29,6 +27,11 @@ class ScoringTest {
         question400 = createQuestion("Fall", 400);
     }
 
+    /** 
+     * @param answer
+     * @param value
+     * @return Question
+     */
     private Question createQuestion(String answer, int value) {
         QuestionBuilder builder = QuestionBuilder.create();
         builder.setCategory("Seasons");

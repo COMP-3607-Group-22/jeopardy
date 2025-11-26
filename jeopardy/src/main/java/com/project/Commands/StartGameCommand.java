@@ -9,6 +9,11 @@ import com.project.Helpers.LogHelper;
 public class StartGameCommand implements GameCommand {
     private final Gameplay gameplay;
 
+    /**
+     * Create a StartGameCommand that will invoke the gameplay start logic.
+     *
+     * @param gameplay gameplay instance to start
+     */
     public StartGameCommand(Gameplay gameplay){
         this.gameplay = gameplay;
     }

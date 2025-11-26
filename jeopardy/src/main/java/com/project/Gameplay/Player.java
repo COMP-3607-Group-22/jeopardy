@@ -10,6 +10,12 @@ public class Player {
     private final String name;
     int score;
 
+    /**
+     * Create a player with the provided display name. An id is generated
+     * automatically and the initial score is zero.
+     *
+     * @param name player's display name
+     */
     public Player(String name) {
         this.id = UUID.randomUUID().toString();
         this.name = name;

@@ -41,6 +41,13 @@ class ReportGenerationTest {
         addFakeTurn("Batman", "Functions", 500, "Python", true);
     }
 
+    /** 
+     * @param playerName
+     * @param category
+     * @param value
+     * @param answer
+     * @param correct
+     */
     private void addFakeTurn(String playerName, String category, int value, String answer, boolean correct) {
         QuestionBuilder builder = QuestionBuilder.create();
         builder.setCategory(category);
@@ -70,6 +77,12 @@ class ReportGenerationTest {
         gameEngine.addTurnSummary();
     }
 
+    /** 
+     * @param obj
+     * @param fieldName
+     * @param value
+     * @throws Exception
+     */
     private void setField(Object obj, String fieldName, Object value) throws Exception {
         java.lang.reflect.Field field = obj.getClass().getDeclaredField(fieldName);
         field.setAccessible(true);

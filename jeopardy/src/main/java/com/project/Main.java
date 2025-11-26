@@ -11,6 +11,13 @@ import com.project.IO.ConsoleScanner;
  */
 public class Main {
     /**
+     * Utility class; prevent instantiation by providing a private constructor
+     * with documentation.
+     */
+    private Main() {
+        // prevent instantiation
+    }
+    /**
      * Application entrypoint. Creates core components and triggers the
      * start/exit command sequence.
      *

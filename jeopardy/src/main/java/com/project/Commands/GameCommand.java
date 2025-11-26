@@ -5,5 +5,8 @@ package com.project.Commands;
  * Implementations perform game actions when `execute()` is called.
  */
 public interface GameCommand  {
+        /**
+         * Execute the implementing command.
+         */
         public void execute();
 }

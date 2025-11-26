@@ -14,6 +14,12 @@ public class GameInvoker{
     private final EventLogHelper eventLogHelper = new EventLogHelper();
     private final String caseId;
 
+    /**
+     * Create a GameInvoker which records commands and annotates log entries
+     * with the provided case identifier.
+     *
+     * @param caseId case identifier used as a prefix on all log entries
+     */
     public GameInvoker(String caseId){
         this.caseId = caseId;
     }
@@ -40,12 +46,17 @@ public class GameInvoker{
     }
 
     /**
+     * Return the case identifier associated with this invoker.
+     *
      * @return the case identifier assigned to this invoker
      */
-    /** @return the case identifier assigned to this invoker */
     public String getCaseId(){return this.caseId;}
 
-    /** @return the internal EventLogHelper instance used for recording events */
+    /**
+     * Return the EventLogHelper used to record pre/post command entries.
+     *
+     * @return EventLogHelper instance used by this invoker
+     */
     public EventLogHelper getEventLogHelper(){return this.eventLogHelper;}
 
     /**

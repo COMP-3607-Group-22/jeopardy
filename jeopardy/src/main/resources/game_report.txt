@@ -1,161 +1,155 @@
 JEOPARDY PROGRAMMING GAME REPORT
 ================================
 Case ID: GAME001
-Players: AliceBob
+Players: [Alice, Bob]
 
 Gameplay Summary:
 -----------------
 
-Turn 1: Alice selected Variables & Data Types for 100
-Question: Which of the following declares an integer variable in C++?
-Answer: A - Correct (+100 pts)
-Score after turn: Alice = 100
-
-
-Turn 2: Bob selected Variables & Data Types for 200
-Question: Which data type is used to store a single character?
-Answer: B - Correct (+200 pts)
-Score after turn: Bob = 200
-
-
-Turn 3: Alice selected Variables & Data Types for 300
-Question: What is the value of x after int x = 5/2;?
-Answer: C - Incorrect (+0 pts)
-Score after turn: Alice = 100
-
-
-Turn 4: Bob selected Variables & Data Types for 400
-Question: Which of the following is a floating-point literal?
-Answer: D - Incorrect (+0 pts)
-Score after turn: Bob = 200
-
-
-Turn 5: Alice selected Variables & Data Types for 500
-Question: Which operator is used to get the remainder?
-Answer: A - Incorrect (+0 pts)
-Score after turn: Alice = 100
-
-
-Turn 6: Bob selected Control Structures for 100
-Question: Which statement is used to make a decision?
-Answer: A - Correct (+100 pts)
-Score after turn: Bob = 300
-
-
-Turn 7: Alice selected Control Structures for 200
-Question: What is the output of: if (5 > 10) cout << 'Hi'; else cout << 'Bye';
-Answer: B - Correct (+200 pts)
-Score after turn: Alice = 300
-
-
-Turn 8: Bob selected Control Structures for 300
-Question: Which loop always executes at least once?
-Answer: C - Correct (+300 pts)
-Score after turn: Bob = 600
-
-
-Turn 9: Alice selected Control Structures for 400
-Question: Which keyword exits a loop immediately?
-Answer: C - Incorrect (+0 pts)
-Score after turn: Alice = 300
-
-
-Turn 10: Bob selected Control Structures for 500
-Question: How many times will the loop for(int i=0;i<3;i++) run?
-Answer: C - Incorrect (+0 pts)
-Score after turn: Bob = 600
-
-
-Turn 11: Alice selected Functions for 100
-Question: Which keyword is used to define a function returning no value?
-Answer: B - Correct (+100 pts)
-Score after turn: Alice = 400
-
-
-Turn 12: Bob selected Functions for 200
-Question: What is the purpose of a function parameter?
-Answer: B - Correct (+200 pts)
-Score after turn: Bob = 800
-
-
-Turn 13: Alice selected Functions for 300
-Question: What is the return type of int add(int a, int b)?
-Answer: C - Incorrect (+0 pts)
-Score after turn: Alice = 400
-
-
-Turn 14: Bob selected Functions for 400
-Question: Which statement exits a function and sends a value back?
-Answer: C - Incorrect (+0 pts)
-Score after turn: Bob = 800
-
-
-Turn 15: Alice selected Functions for 500
-Question: If a function is not declared before use, what may happen?
-Answer: C - Incorrect (+0 pts)
-Score after turn: Alice = 400
-
-
-Turn 16: Bob selected Arrays for 100
+Turn 1: Alice selected Arrays for 100
 Question: Which declares an array of 5 integers?
 Answer: A - Correct (+100 pts)
-Score after turn: Bob = 900
+Score after turn: Alice = 100
 
 
-Turn 17: Alice selected Arrays for 200
+Turn 2: Bob selected Arrays for 200
 Question: What is the index of the first element in a C++ array?
-Answer: B - Correct (+200 pts)
-Score after turn: Alice = 600
+Answer: A - Incorrect (+0 pts)
+Score after turn: Bob = 0
 
 
-Turn 18: Bob selected Arrays for 300
+Turn 3: Alice selected Arrays for 300
 Question: Which loop is best for iterating a fixed-size array?
 Answer: C - Correct (+300 pts)
-Score after turn: Bob = 1200
+Score after turn: Alice = 400
 
 
-Turn 19: Alice selected Arrays for 400
+Turn 4: Bob selected Arrays for 400
 Question: What happens if you access out-of-range index?
 Answer: D - Incorrect (+0 pts)
-Score after turn: Alice = 600
+Score after turn: Bob = 0
 
 
-Turn 20: Bob selected Arrays for 500
+Turn 5: Alice selected Arrays for 500
 Question: How many elements in int arr[3][4];?
 Answer: B - Correct (+500 pts)
-Score after turn: Bob = 1700
+Score after turn: Alice = 900
+
+
+Turn 6: Bob selected Variables & Data Types for 100
+Question: Which of the following declares an integer variable in C++?
+Answer: A - Correct (+100 pts)
+Score after turn: Bob = 100
+
+
+Turn 7: Alice selected Variables & Data Types for 200
+Question: Which data type is used to store a single character?
+Answer: C - Incorrect (+0 pts)
+Score after turn: Alice = 900
+
+
+Turn 8: Bob selected Variables & Data Types for 300
+Question: What is the value of x after int x = 5/2;?
+Answer: D - Incorrect (+0 pts)
+Score after turn: Bob = 100
+
+
+Turn 9: Alice selected Variables & Data Types for 400
+Question: Which of the following is a floating-point literal?
+Answer: C - Incorrect (+0 pts)
+Score after turn: Alice = 900
+
+
+Turn 10: Bob selected Variables & Data Types for 500
+Question: Which operator is used to get the remainder?
+Answer: A - Incorrect (+0 pts)
+Score after turn: Bob = 100
+
+
+Turn 11: Alice selected Control Structures for 100
+Question: Which statement is used to make a decision?
+Answer: B - Incorrect (+0 pts)
+Score after turn: Alice = 900
+
+
+Turn 12: Bob selected Control Structures for 300
+Question: Which loop always executes at least once?
+Answer: A - Incorrect (+0 pts)
+Score after turn: Bob = 100
+
+
+Turn 13: Alice selected Control Structures for 200
+Question: What is the output of: if (5 > 10) cout << 'Hi'; else cout << 'Bye';
+Answer: C - Incorrect (+0 pts)
+Score after turn: Alice = 900
+
+
+Turn 14: Bob selected Control Structures for 400
+Question: Which keyword exits a loop immediately?
+Answer: D - Correct (+400 pts)
+Score after turn: Bob = 500
+
+
+Turn 15: Alice selected Control Structures for 500
+Question: How many times will the loop for(int i=0;i<3;i++) run?
+Answer: C - Incorrect (+0 pts)
+Score after turn: Alice = 900
+
+
+Turn 16: Bob selected Functions for 100
+Question: Which keyword is used to define a function returning no value?
+Answer: C - Incorrect (+0 pts)
+Score after turn: Bob = 500
+
+
+Turn 17: Alice selected Functions for 200
+Question: What is the purpose of a function parameter?
+Answer: B - Correct (+200 pts)
+Score after turn: Alice = 1100
+
+
+Turn 18: Bob selected Functions for 300
+Question: What is the return type of int add(int a, int b)?
+Answer: D - Incorrect (+0 pts)
+Score after turn: Bob = 500
+
+
+Turn 19: Alice selected Functions for 400
+Question: Which statement exits a function and sends a value back?
+Answer: D - Incorrect (+0 pts)
+Score after turn: Alice = 1100
+
+
+Turn 20: Bob selected Functions for 500
+Question: If a function is not declared before use, what may happen?
+Answer: B - Correct (+500 pts)
+Score after turn: Bob = 1000
 
 
 Turn 21: Alice selected File Handling for 100
 Question: Which header file is used for file I/O?
-Answer: B - Incorrect (+0 pts)
-Score after turn: Alice = 600
+Answer: C - Incorrect (+0 pts)
+Score after turn: Alice = 1100
 
 
 Turn 22: Bob selected File Handling for 200
 Question: Which stream is used to write to a file?
-Answer: D - Incorrect (+0 pts)
-Score after turn: Bob = 1700
+Answer: A - Incorrect (+0 pts)
+Score after turn: Bob = 1000
 
 
 Turn 23: Alice selected File Handling for 300
 Question: Which method opens a file in append mode?
-Answer: C - Correct (+300 pts)
-Score after turn: Alice = 900
+Answer: D - Incorrect (+0 pts)
+Score after turn: Alice = 1100
 
 
 Turn 24: Bob selected File Handling for 400
 Question: Which function closes a file?
-Answer: A - Incorrect (+0 pts)
-Score after turn: Bob = 1700
-
-
-Turn 25: Alice selected File Handling for 500
-Question: What happens if a file fails to open?
-Answer: D - Incorrect (+0 pts)
-Score after turn: Alice = 900
+Answer: C - Correct (+400 pts)
+Score after turn: Bob = 1400
 
 
 Final Scores:
-Alice: 900
-Bob: 1700
+Alice: 1100
+Bob: 1400

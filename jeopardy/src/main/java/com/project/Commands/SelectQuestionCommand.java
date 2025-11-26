@@ -10,6 +10,11 @@ public class SelectQuestionCommand implements GameCommand {
    
     private final GameEngine gameEngine;
     
+    /**
+     * Create the command used to select a question for the current category.
+     *
+     * @param gameEngine engine orchestrating question selection
+     */
     public SelectQuestionCommand(GameEngine gameEngine) {
         this.gameEngine = gameEngine;
     

@@ -11,6 +11,15 @@ public class Question {
     private final ArrayList<String> options;
     private final String answer;
 
+    /**
+     * Construct an immutable Question value object.
+     *
+     * @param category category name
+     * @param value numeric value/points for the question
+     * @param question textual content of the question
+     * @param options list of answer options
+     * @param answer the correct answer
+     */
     public Question(String category, int value, String question, 
         ArrayList<String> options, String answer){
             this.category = category;

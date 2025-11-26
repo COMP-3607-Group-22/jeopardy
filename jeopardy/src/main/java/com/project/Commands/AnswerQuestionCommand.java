@@ -9,6 +9,12 @@ import com.project.Helpers.LogHelper;
  */
 public class AnswerQuestionCommand implements GameCommand {
     private final GameEngine gameEngine;
+
+    /**
+     * Create an AnswerQuestionCommand bound to the provided game engine.
+     *
+     * @param gameEngine engine that will process the submitted answer
+     */
     public AnswerQuestionCommand(GameEngine gameEngine){
         this.gameEngine = gameEngine;
     }

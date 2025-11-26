@@ -19,6 +19,9 @@ public class ParserAdapterTest {
 
     private Path testDir;
 
+    /** 
+     * @throws IOException
+     */
     @BeforeEach
     void setUp() throws IOException {
         testDir = Files.createTempDirectory("adapter_test_");
@@ -52,6 +55,12 @@ public class ParserAdapterTest {
         }
     }
 
+    /** 
+     * @param name
+     * @param content
+     * @return Path
+     * @throws IOException
+     */
     private Path createTestFile(String name, String content) throws IOException {
         Path p = testDir.resolve(name);
         Files.write(p, content.getBytes());

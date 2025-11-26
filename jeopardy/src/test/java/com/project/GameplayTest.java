@@ -34,6 +34,9 @@ class GameplayTest {
     private ConsoleIO consoleIO;
     private ReportHelper reportHelper;
 
+    /** 
+     * @throws Exception
+     */
     @BeforeEach
     void setup() throws Exception {
 
@@ -51,6 +54,11 @@ class GameplayTest {
                 new ArrayList<>(Arrays.asList(player1, player2)), consoleIO, reportHelper);
     }
 
+    /** 
+     * @param fieldName
+     * @param value
+     * @throws Exception
+     */
     private void set(String fieldName, Object value) throws Exception {
         Field f = GameEngine.class.getDeclaredField(fieldName);
         f.setAccessible(true);
@@ -78,6 +86,9 @@ class GameplayTest {
         assertEquals("Tom", gameEngine.getCurrentPlayer().getName());
     }
 
+    /** 
+     * @throws Exception
+     */
     @Test
     @DisplayName("Correct answer adds points and removes question")
     void correctAnswerFlow() throws Exception {
@@ -107,6 +118,9 @@ class GameplayTest {
         assertEquals(beforeCount - 1, categoryManager.getQuestions(category).size());
     }
 
+    /** 
+     * @throws Exception
+     */
     @Test
     @DisplayName("Category is remvoved when empty")
     void categoryRemovedWhenEmpty() throws Exception {
@@ -135,6 +149,9 @@ class GameplayTest {
         assertFalse(categoryManager.getCategoryNames().contains(category));
     }
 
+    /** 
+     * @throws Exception
+     */
     @Test
     @DisplayName("Game ends when all categories are removed")
     void gameEndsWhenAllCategoriesRemoved() throws Exception {
