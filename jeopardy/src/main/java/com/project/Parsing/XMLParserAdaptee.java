@@ -1,7 +1,11 @@
 package com.project.Parsing;
-import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -13,6 +17,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import com.project.Questions.Question;
@@ -25,26 +30,32 @@ import com.project.Questions.QuestionBuilder;
 public class XMLParserAdaptee implements ParserAdaptee{
     private final ArrayList<Question> questions;
 
+    /**
+     * Create a new XML parser instance.
+     * The internal questions list is cleared on each {@link #parse(String)} call.
+     */
     public XMLParserAdaptee(){
         this.questions = new ArrayList<>();
     }
 
+    /**
+     * Parse questions from an XML document with {@code QuestionItem} elements.
+     * Each {@code QuestionItem} should contain Category, Value, QuestionText,
+     * Options and CorrectAnswer nodes. Malformed items are skipped.
+     *
+     * @param fileName path or resource name of the XML file
+     * @return list of parsed {@code Question} instances (never null)
+     */
     @Override
     public ArrayList<Question> parse(String fileName){
-        /**
-         * Parse questions from an XML document with `QuestionItem` elements.
-         * Each `QuestionItem` should contain Category, Value, QuestionText,
-         * Options and CorrectAnswer nodes. Malformed items are skipped.
-         *
-         * @param fileName path or resource name of the XML file
-         * @return list of parsed Question instances (never null)
-         */
         questions.clear(); // Clear previous data
-        String path = normalizePath(fileName);
-        try{
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
+        try(Reader sourceReader = inputStream != null
+                ? new InputStreamReader(inputStream, StandardCharsets.UTF_8)
+                : new FileReader(normalizePath(fileName))) {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse(new File(path));
+            Document document = builder.parse(new InputSource(sourceReader));
             document.getDocumentElement().normalize();
             NodeList nodes = document.getElementsByTagName("QuestionItem");
             for (int i = 0; i < nodes.getLength(); i++) {
@@ -88,11 +99,17 @@ public class XMLParserAdaptee implements ParserAdaptee{
                 }
             }
         } catch (IOException | ParserConfigurationException | SAXException e) {
-            System.err.println("Error reading XML file: " + e.getMessage());
+            System.err.println("Error reading XML file '" + fileName + "': " + e.getMessage());
         }
         return questions;
     }
 
+    /**
+     * Normalize a possibly URL-encoded classpath or filesystem path.
+     *
+     * @param p input path or resource identifier
+     * @return decoded filesystem path string
+     */
     private static String normalizePath(String p) {
         try {
             String decoded = java.net.URLDecoder.decode(p, java.nio.charset.StandardCharsets.UTF_8.name());

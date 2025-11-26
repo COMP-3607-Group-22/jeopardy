@@ -45,9 +45,14 @@ public class Gameplay {
      */
     public void startGame(){
         consoleIO.print("Game " + gameInvoker.getCaseId() + " created.\n");
-        consoleIO.print("Enter filename for Game data to load (must be in directory jeopardy/src/main/resources and of type .csv|.json|.xml):\n");
+        consoleIO.print("Enter filename for Game data to load (provide either a classpath resource name or a filesystem path; supported types: .csv|.json|.xml):\n");
 
-        gameInvoker.executeCommand(new LoadFileCommand(manager, "jeopardy/src/main/resources/" + consoleIO.readLine()));
+        // Accept either a classpath resource name (e.g. `sample_game_CSV.csv`) or
+        // a full filesystem path. The parser implementations will attempt to
+        // resolve classpath resources first and fall back to opening the file
+        // system path if needed.
+        String userInput = consoleIO.readLine();
+        gameInvoker.executeCommand(new LoadFileCommand(manager, userInput));
         gameInvoker.executeCommand(new SelectPlayerCountCommand(gameInit));
 
         for(int x = 0; x < gameInit.getPlayerCount();x++){
@@ -78,5 +83,7 @@ public class Gameplay {
     public void exitGame(){
         gameInvoker.executeCommand(new GenerateReportCommand(gameTermination, gameEngine.getReportHelper()));
         gameInvoker.executeCommand(new GenerateEventLogCommand(gameTermination, gameInvoker.getEventLogHelper()));
+        consoleIO.print("Thank you for playing!\n");
+        consoleIO.close();
     }
 }

@@ -4,12 +4,18 @@ import com.project.Gameplay.GameInitialization;
 import com.project.Gameplay.Player;
 import com.project.Helpers.LogHelper;
 
+/**
+ * Command used during setup to capture a player's name and add it to the
+ * {@link GameInitialization} instance.
+ */
 public class EnterPlayerNameCommand implements GameCommand{
-    /**
-     * Command used during setup to enter a player's name into GameInitialization.
-     */
     private final GameInitialization gameInit;
 
+    /**
+     * Create the command bound to a GameInitialization helper.
+     *
+     * @param gameInit the setup helper used to store entered player names
+     */
     public EnterPlayerNameCommand(GameInitialization gameInit) {
         this.gameInit = gameInit;
     }
@@ -19,6 +25,9 @@ public class EnterPlayerNameCommand implements GameCommand{
         gameInit.enterPlayerName();
     }
 
+    /** 
+     * @return String
+     */
     @Override
     public String toString(){
     /**

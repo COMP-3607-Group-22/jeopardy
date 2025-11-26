@@ -49,9 +49,17 @@ public class GameInitialization {
         }
     }
 
-    /** @return the list of players entered during setup */
+    /**
+     * Return the list of players entered during setup.
+     *
+     * @return the list of players entered during setup
+     */
     public ArrayList<Player> getPlayers(){return this.players;}
 
-    /** @return the configured player count */
+    /**
+     * Return the configured number of players for the game.
+     *
+     * @return the configured player count
+     */
     public int getPlayerCount(){return this.pc;}
 }

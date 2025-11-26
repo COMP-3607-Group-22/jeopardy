@@ -25,4 +25,10 @@ public interface ConsoleIO {
      * @param message the text to print
      */
     void print(String message);
+
+    /**
+     * Close any underlying resources associated with this ConsoleIO.
+     * Should be called when the application is shutting down.
+     */
+    void close();
 }

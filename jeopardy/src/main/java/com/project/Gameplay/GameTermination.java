@@ -8,8 +8,18 @@ import java.util.ArrayList;
 import com.project.Helpers.EventLogHelper;
 import com.project.Helpers.ReportHelper;
 import com.project.IO.ConsoleIO;
+/**
+ * Responsible for finalizing game outputs such as report and event log
+ * files. Uses a ConsoleIO for user-visible notifications.
+ */
 public class GameTermination{
     private final ConsoleIO consoleIO;
+
+    /**
+     * Create a GameTermination helper bound to the provided console IO.
+     *
+     * @param consoleIO console abstraction used for status messages
+     */
     public GameTermination(ConsoleIO consoleIO){
         this.consoleIO = consoleIO;
     }

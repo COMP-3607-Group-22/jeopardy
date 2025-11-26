@@ -126,7 +126,7 @@ public final class GameEngine{
      * category state, then advance to the next player's turn.
      */
     public void answerQuestion(){
-        consoleIO.print("\nYour Choice : ");
+        consoleIO.print("\nYour Choice: ");
         this.givenAnswer = consoleIO.readLine();
 
         if(isAnswerCorrect()){
@@ -171,28 +171,60 @@ public final class GameEngine{
         consoleIO.println("---------------------------------");
     }
 
-    /** @return the currently selected category name, or null when none is selected */
+    /**
+     * Return the currently selected category name.
+     *
+     * @return the currently selected category name, or {@code null} when none is selected
+     */
     public String getCurrentCategory() {return this.currentCategory;}
 
-    /** @return true when there are no categories remaining */
-    public boolean getCategoryEmpty() {return this.category.getAllCatergories().isEmpty();}
+    /**
+     * Check whether there are no categories remaining in the game.
+     *
+     * @return {@code true} when there are no categories remaining
+     */
+    public boolean getCategoryEmpty() {return this.category.getAllCategories().isEmpty();}
 
-    /** @return the currently selected question, or null when none is selected */
+    /**
+     * Return the currently selected question.
+     *
+     * @return the selected {@code Question}, or {@code null} when none is selected
+     */
     public Question getCurrentQuestion() {return this.currentQuestion;}
 
-    /** @return the player whose turn it currently is */
+    /**
+     * Return the player whose turn it currently is.
+     *
+     * @return the active {@code Player}
+     */
     public Player getCurrentPlayer(){return this.currentPlayer;}
 
-    /** @return the list of players in the game */
+    /**
+     * Return the list of players participating in the game.
+     *
+     * @return an ArrayList of {@code Player} objects
+     */
     public ArrayList<Player> getPlayers(){return this.players;}
 
-    /** @return the player who most recently took a turn, or null if none */
+    /**
+     * Return the player who most recently took a turn.
+     *
+     * @return the last {@code Player} who acted, or {@code null} if none
+     */
     public Player getLastPlayer(){return this.lastPlayer;}
 
-    /** @return the ReportHelper instance used to collect report entries */
+    /**
+     * Return the report helper used to collect turn summaries and final scores.
+     *
+     * @return the {@code ReportHelper} instance
+     */
     public ReportHelper getReportHelper(){return this.reportHelper;}
 
-    /** @return the last answer given by the current player */
+    /**
+     * Return the last answer provided by the current player.
+     *
+     * @return the answer string most recently given
+     */
     public String getGivenAnswer(){return this.givenAnswer;}
 
     /**
@@ -208,6 +240,11 @@ public final class GameEngine{
      *
      * @return score summary for display
      */
+    /**
+     * Construct a multi-line string representing current player scores.
+     *
+     * @return score summary for display
+     */
     public String getScores(){
         StringBuilder scores = new StringBuilder("Current Scores:\n");
         for(Player p : this.players){
@@ -216,6 +253,10 @@ public final class GameEngine{
         return scores.toString();
     }
 
+    /**
+     * Append a turn summary line to the report helper describing the
+     * current player's action and the outcome.
+     */
     public void addTurnSummary(){
         reportHelper.addTurnSummary(
             "Turn " + this.totalTurns + ": " + this.currentPlayer + " selected " + this.currentCategory + " for " + this.currentQuestion.getValue()

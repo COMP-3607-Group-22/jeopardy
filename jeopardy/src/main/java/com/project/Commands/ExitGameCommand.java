@@ -10,6 +10,11 @@ public class ExitGameCommand implements GameCommand {
 
     private final Gameplay gameplay;
 
+    /**
+     * Create a new ExitGameCommand bound to the provided gameplay instance.
+     *
+     * @param gameplay gameplay instance to command
+     */
     public ExitGameCommand(Gameplay gameplay) {
         this.gameplay = gameplay;
     }
@@ -19,6 +24,9 @@ public class ExitGameCommand implements GameCommand {
         gameplay.exitGame();
     }
 
+    /** 
+     * @return String
+     */
     @Override
     public String toString(){
         return "System,Exit Game," + new LogHelper().getTimeStamp() + ",,,,";

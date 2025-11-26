@@ -1,7 +1,10 @@
 package com.project.Parsing;
 
-import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,25 +22,31 @@ import com.project.Questions.QuestionBuilder;
 public class JSONParserAdaptee implements ParserAdaptee {
     private final ArrayList<Question> questions;
 
+    /**
+     * Create a new JSON parser instance.
+     * Holds an internal list of parsed questions; safe to reuse across parses.
+     */
     public JSONParserAdaptee(){
         this.questions = new ArrayList<>();
     }
 
+    /**
+     * Parse questions from a JSON array file. Each element should be an
+     * object containing the expected fields (Category, Value, Question,
+     * Options, CorrectAnswer). Invalid entries are skipped.
+     *
+     * @param fileName path or resource identifying the JSON file
+     * @return list of parsed {@code Question} objects (never null)
+     */
     @Override
     public ArrayList<Question> parse(String fileName){
-        /**
-         * Parse questions from a JSON array file. Each element should be an
-         * object containing the expected fields (Category, Value, Question,
-         * Options, CorrectAnswer). Invalid entries are skipped.
-         *
-         * @param fileName path or resource identifying the JSON file
-         * @return list of parsed Question objects (never null)
-         */
         questions.clear();
-        String path = normalizePath(fileName);
-        try{
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
+        try(Reader sourceReader = inputStream != null
+                ? new InputStreamReader(inputStream, java.nio.charset.StandardCharsets.UTF_8)
+                : new FileReader(normalizePath(fileName))) {
             ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode rootNode = objectMapper.readTree(new File(path));
+            JsonNode rootNode = objectMapper.readTree(sourceReader);
             if(rootNode.isArray()){
                 ArrayNode arrayNode = (ArrayNode) rootNode;
 
@@ -55,7 +64,6 @@ public class JSONParserAdaptee implements ParserAdaptee {
                             if(node.get("Question") != null) {
                                 builder.setQuestion(node.get("Question").asText());
                             }
-                            
                             JsonNode options = node.get("Options");
                             if(options != null && options.isObject()) {
                                 String optA = options.get("A") != null ? options.get("A").asText() : "";
@@ -78,11 +86,17 @@ public class JSONParserAdaptee implements ParserAdaptee {
                 }
             }
         }catch (IOException e) {
-            System.err.println("Error reading JSON file: " + e.getMessage());
+            System.err.println("Error reading JSON file '" + fileName + "': " + e.getMessage());
         }
         return questions;
     }
 
+    /**
+     * Normalize a possibly URL-encoded classpath or filesystem path.
+     *
+     * @param p input path or resource identifier
+     * @return decoded filesystem path string
+     */
     private static String normalizePath(String p) {
         try {
             String decoded = java.net.URLDecoder.decode(p, java.nio.charset.StandardCharsets.UTF_8.name());

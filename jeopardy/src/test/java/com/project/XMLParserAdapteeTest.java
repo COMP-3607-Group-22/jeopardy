@@ -19,6 +19,9 @@ public class XMLParserAdapteeTest {
     private XMLParserAdaptee parser;
     private Path testDir;
 
+    /** 
+     * @throws IOException
+     */
     @BeforeEach
     void setUp() throws IOException {
         parser = new XMLParserAdaptee();
@@ -83,6 +86,12 @@ public class XMLParserAdapteeTest {
         }
     }
 
+    /** 
+     * @param name
+     * @param content
+     * @return Path
+     * @throws IOException
+     */
     private Path createTestFile(String name, String content) throws IOException {
         Path p = testDir.resolve(name);
         Files.write(p, content.getBytes());

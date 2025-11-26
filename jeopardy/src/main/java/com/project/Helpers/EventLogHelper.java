@@ -8,6 +8,10 @@ import java.util.ArrayList;
 public class EventLogHelper {
     ArrayList<String> eventLogs;
 
+    /**
+     * Construct an in-memory event log helper and initialize the CSV header
+     * line used by exporters.
+     */
     public EventLogHelper() {
         eventLogs = new ArrayList<>();
         eventLogs.add("Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play");
