@@ -1,14 +1,84 @@
 Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
-GAME001,System,Start Game,2025-11-25T17:32:00,,,,,
-GAME001,System,Load File,2025-11-25T17:31:43,,,,Success,
-GAME001,System,Select Player Count,2025-11-25T17:31:45,,,1,N/A,
-GAME001,Bob,Enter Player Name,2025-11-25T17:31:47,,,Bob,N/A,
-GAME001,Bob,Select Category,2025-11-25T17:31:50,Arrays,,,,0
-GAME001,Bob,Select Question,2025-11-25T17:31:51,Arrays,100,,,0
-GAME001,Bob,Answer Question,2025-11-25T17:31:53,Arrays,100,A,Correct,100
-GAME001,Bob,Select Category,2025-11-25T17:31:55,Arrays,,,,100
-GAME001,Bob,Select Question,2025-11-25T17:31:57,Arrays,200,,,100
-GAME001,Bob,Answer Question,2025-11-25T17:32:00,Arrays,200,B,Correct,300
-GAME001,System,Exit Game,2025-11-25T17:32:00,,,,,
-GAME001,System,Generate Report,2025-11-25T17:32:00,,,,N/A,
-GAME001,System,Generate Event Log,2025-11-25T17:32:00,,,,N/A,
+GAME001,System,Start Game,2025-11-26T02:58:35,,,,,
+GAME001,System,Load File,2025-11-26T02:55:03,,,,Success,
+GAME001,System,Select Player Count,2025-11-26T02:55:04,,,2,N/A,
+GAME001,Alice,Enter Player Name,2025-11-26T02:55:07,,,Alice,N/A,
+GAME001,Bob,Enter Player Name,2025-11-26T02:55:08,,,Bob,N/A,
+GAME001,Alice,Select Category,2025-11-26T02:55:13,Variables & Data Types,,,,0
+GAME001,Alice,Select Question,2025-11-26T02:55:15,Variables & Data Types,100,,,0
+GAME001,Alice,Answer Question,2025-11-26T02:55:17,Variables & Data Types,100,A,Correct,100
+GAME001,Bob,Select Category,2025-11-26T02:55:18,Variables & Data Types,,,,0
+GAME001,Bob,Select Question,2025-11-26T02:55:20,Variables & Data Types,200,,,0
+GAME001,Bob,Answer Question,2025-11-26T02:55:22,Variables & Data Types,200,B,Correct,200
+GAME001,Alice,Select Category,2025-11-26T02:55:24,Variables & Data Types,,,,100
+GAME001,Alice,Select Question,2025-11-26T02:55:26,Variables & Data Types,300,,,100
+GAME001,Alice,Answer Question,2025-11-26T02:55:30,Variables & Data Types,300,C,Incorrect,100
+GAME001,Bob,Select Category,2025-11-26T02:55:34,Variables & Data Types,,,,200
+GAME001,Bob,Select Question,2025-11-26T02:55:36,Variables & Data Types,400,,,200
+GAME001,Bob,Answer Question,2025-11-26T02:55:40,Variables & Data Types,400,D,Incorrect,200
+GAME001,Alice,Select Category,2025-11-26T02:55:42,Variables & Data Types,,,,100
+GAME001,Alice,Select Question,2025-11-26T02:55:44,Variables & Data Types,500,,,100
+GAME001,Alice,Answer Question,2025-11-26T02:55:45,Variables & Data Types,500,A,Incorrect,100
+GAME001,Bob,Select Category,2025-11-26T02:55:50,Control Structures,,,,200
+GAME001,Bob,Select Question,2025-11-26T02:55:52,Control Structures,100,,,200
+GAME001,Bob,Answer Question,2025-11-26T02:55:54,Control Structures,100,A,Correct,300
+GAME001,Alice,Select Category,2025-11-26T02:55:55,Control Structures,,,,100
+GAME001,Alice,Select Question,2025-11-26T02:55:58,Control Structures,200,,,100
+GAME001,Alice,Answer Question,2025-11-26T02:55:59,Control Structures,200,B,Correct,300
+GAME001,Bob,Select Category,2025-11-26T02:56:04,Control Structures,,,,300
+GAME001,Bob,Select Question,2025-11-26T02:56:06,Control Structures,300,,,300
+GAME001,Bob,Answer Question,2025-11-26T02:56:08,Control Structures,300,C,Correct,600
+GAME001,Alice,Select Category,2025-11-26T02:56:16,Control Structures,,,,300
+GAME001,Alice,Select Question,2025-11-26T02:56:17,Control Structures,400,,,300
+GAME001,Alice,Answer Question,2025-11-26T02:56:19,Control Structures,400,C,Incorrect,300
+GAME001,Bob,Select Category,2025-11-26T02:56:21,Control Structures,,,,600
+GAME001,Bob,Select Question,2025-11-26T02:56:24,Control Structures,500,,,600
+GAME001,Bob,Answer Question,2025-11-26T02:56:26,Control Structures,500,C,Incorrect,600
+GAME001,Alice,Select Category,2025-11-26T02:56:29,Functions,,,,300
+GAME001,Alice,Select Question,2025-11-26T02:56:31,Functions,100,,,300
+GAME001,Alice,Answer Question,2025-11-26T02:56:33,Functions,100,B,Correct,400
+GAME001,Bob,Select Category,2025-11-26T02:56:50,Functions,,,,600
+GAME001,Bob,Select Question,2025-11-26T02:56:52,Functions,200,,,600
+GAME001,Bob,Answer Question,2025-11-26T02:57:02,Functions,200,B,Correct,800
+GAME001,Alice,Select Category,2025-11-26T02:57:11,Functions,,,,400
+GAME001,Alice,Select Question,2025-11-26T02:57:12,Functions,300,,,400
+GAME001,Alice,Answer Question,2025-11-26T02:57:14,Functions,300,C,Incorrect,400
+GAME001,Bob,Select Category,2025-11-26T02:57:18,Functions,,,,800
+GAME001,Bob,Select Question,2025-11-26T02:57:19,Functions,400,,,800
+GAME001,Bob,Answer Question,2025-11-26T02:57:21,Functions,400,C,Incorrect,800
+GAME001,Alice,Select Category,2025-11-26T02:57:23,Functions,,,,400
+GAME001,Alice,Select Question,2025-11-26T02:57:25,Functions,500,,,400
+GAME001,Alice,Answer Question,2025-11-26T02:57:29,Functions,500,C,Incorrect,400
+GAME001,Bob,Select Category,2025-11-26T02:57:33,Arrays,,,,800
+GAME001,Bob,Select Question,2025-11-26T02:57:35,Arrays,100,,,800
+GAME001,Bob,Answer Question,2025-11-26T02:57:36,Arrays,100,A,Correct,900
+GAME001,Alice,Select Category,2025-11-26T02:57:38,Arrays,,,,400
+GAME001,Alice,Select Question,2025-11-26T02:57:40,Arrays,200,,,400
+GAME001,Alice,Answer Question,2025-11-26T02:57:41,Arrays,200,B,Correct,600
+GAME001,Bob,Select Category,2025-11-26T02:57:46,Arrays,,,,900
+GAME001,Bob,Select Question,2025-11-26T02:57:47,Arrays,300,,,900
+GAME001,Bob,Answer Question,2025-11-26T02:57:49,Arrays,300,C,Correct,1200
+GAME001,Alice,Select Category,2025-11-26T02:57:51,Arrays,,,,600
+GAME001,Alice,Select Question,2025-11-26T02:57:53,Arrays,400,,,600
+GAME001,Alice,Answer Question,2025-11-26T02:57:54,Arrays,400,D,Incorrect,600
+GAME001,Bob,Select Category,2025-11-26T02:57:55,Arrays,,,,1200
+GAME001,Bob,Select Question,2025-11-26T02:57:57,Arrays,500,,,1200
+GAME001,Bob,Answer Question,2025-11-26T02:58:00,Arrays,500,B,Correct,1700
+GAME001,Alice,Select Category,2025-11-26T02:58:06,File Handling,,,,600
+GAME001,Alice,Select Question,2025-11-26T02:58:08,File Handling,100,,,600
+GAME001,Alice,Answer Question,2025-11-26T02:58:10,File Handling,100,B,Incorrect,600
+GAME001,Bob,Select Category,2025-11-26T02:58:12,File Handling,,,,1700
+GAME001,Bob,Select Question,2025-11-26T02:58:14,File Handling,200,,,1700
+GAME001,Bob,Answer Question,2025-11-26T02:58:16,File Handling,200,D,Incorrect,1700
+GAME001,Alice,Select Category,2025-11-26T02:58:17,File Handling,,,,600
+GAME001,Alice,Select Question,2025-11-26T02:58:19,File Handling,300,,,600
+GAME001,Alice,Answer Question,2025-11-26T02:58:21,File Handling,300,C,Correct,900
+GAME001,Bob,Select Category,2025-11-26T02:58:24,File Handling,,,,1700
+GAME001,Bob,Select Question,2025-11-26T02:58:26,File Handling,400,,,1700
+GAME001,Bob,Answer Question,2025-11-26T02:58:28,File Handling,400,A,Incorrect,1700
+GAME001,Alice,Select Category,2025-11-26T02:58:31,File Handling,,,,900
+GAME001,Alice,Select Question,2025-11-26T02:58:33,File Handling,500,,,900
+GAME001,Alice,Answer Question,2025-11-26T02:58:35,File Handling,500,D,Incorrect,900
+GAME001,System,Exit Game,2025-11-26T02:58:35,,,,,
+GAME001,System,Generate Report,2025-11-26T02:58:35,,,,N/A,
+GAME001,System,Generate Event Log,2025-11-26T02:58:35,,,,N/A,

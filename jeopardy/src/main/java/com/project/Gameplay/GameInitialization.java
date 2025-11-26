@@ -1,39 +1,38 @@
 package com.project.Gameplay;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+
+import com.project.IO.ConsoleIO;
 
 public class GameInitialization {
+    private final ConsoleIO consoleIO;
+    public GameInitialization(ConsoleIO consoleIO){
+        this.consoleIO = consoleIO;
+    }
 
     private int pc;
     ArrayList<Player> players = new ArrayList<>();
 
     public void selectPlayerCount(){
-         Scanner scanner = new Scanner(System.in);
-         System.out.println("How many players are playing in the game?");
-         int playercount = scanner.nextInt();
+         consoleIO.print("\nHow many players are playing in the game?\n");
+         int playercount = Integer.parseInt(consoleIO.readLine());
          if(playercount <= 0 || playercount > 4){
-            System.out.println("Pick in the range of 1-4");
+            consoleIO.print("Pick in the range of 1-4\n");
             selectPlayerCount();
          }
          this.pc = playercount;
     }
 
     public void enterPlayerName(){
-        Scanner scanner = new Scanner(System.in);
-
         if(this.players.size() < this.pc){
-            System.out.println("Enter the name of this player.");
-            String name = scanner.nextLine();
+            consoleIO.print("Enter the name of this player.\n");
+            String name = consoleIO.readLine();
             this.players.add(new Player(name));
         }else{
-            System.out.println("All players have been entered.");
+            consoleIO.print("All players have been entered.\n");
         }
     }
 
-    public ArrayList<Player> getPlayers(){
-        return this.players;
-    }
-
+    public ArrayList<Player> getPlayers(){return this.players;}
     public int getPlayerCount(){return this.pc;}
 }
