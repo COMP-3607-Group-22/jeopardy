@@ -1,6 +1,9 @@
 package com.project.Questions;
 import java.util.ArrayList;
 
+/**
+ * Immutable value object representing a single quiz question.
+ */
 public class Question {
     private final String category;
     private final int value;
@@ -17,12 +20,47 @@ public class Question {
             this.answer = answer;
         }
 
+    /**
+     * Return the category of this question.
+     *
+     * @return category string
+     */
     public String getCategory(){return this.category;}
+
+    /**
+     * Return the point value assigned to this question.
+     *
+     * @return integer point value
+     */
     public int getValue(){return this.value;}
+
+    /**
+     * Return the main question text.
+     *
+     * @return question text
+     */
     public String getQuestion(){return this.question;}
+
+    /**
+     * Return the list of possible answer options.
+     *
+     * @return an ArrayList of option strings
+     */
     public ArrayList<String> getOptions(){return this.options;}
+
+    /**
+     * Return the correct answer for this question.
+     *
+     * @return correct answer string
+     */
     public String getAnswer(){return this.answer;}
 
+    /**
+     * Return the options formatted as a labeled multi-line string
+     * (A., B., ...).
+     *
+     * @return formatted options string
+     */
     public String getOptionsAsString(){
         StringBuilder optionsStr = new StringBuilder();
         char optionLabel = 'A';

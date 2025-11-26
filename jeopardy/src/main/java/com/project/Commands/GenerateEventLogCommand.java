@@ -4,6 +4,10 @@ import com.project.Gameplay.GameTermination;
 import com.project.Helpers.EventLogHelper;
 import com.project.Helpers.LogHelper;
 
+/**
+ * Command that triggers generation of the persistent event log file using the
+ * provided EventLogHelper instance.
+ */
 public class GenerateEventLogCommand implements GameCommand {
 
     private final GameTermination gameTerm;

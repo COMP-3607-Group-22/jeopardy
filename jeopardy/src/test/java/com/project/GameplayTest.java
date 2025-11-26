@@ -1,20 +1,27 @@
 package com.project;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import java.lang.reflect.Field;
-import java.util.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import com.project.Gameplay.GameEngine;
 import com.project.Gameplay.Player;
 import com.project.Helpers.CategoryManager;
+import com.project.Helpers.ReportHelper;
+import com.project.IO.ConsoleIO;
+import com.project.IO.ConsoleScanner;
 import com.project.Parsing.CSVParserAdaptee;
 import com.project.Questions.Question;
 import com.project.Questions.QuestionManager;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 
 @DisplayName("Gameplay Tests")
 class GameplayTest {
@@ -24,6 +31,8 @@ class GameplayTest {
     private Player player2;
     private CategoryManager categoryManager;
     private QuestionManager questionManager;
+    private ConsoleIO consoleIO;
+    private ReportHelper reportHelper;
 
     @BeforeEach
     void setup() throws Exception {
@@ -33,11 +42,13 @@ class GameplayTest {
         questionManager = new QuestionManager();
         questionManager.getQuestions().addAll(questions);
         categoryManager = new CategoryManager(questionManager);
+        consoleIO = new ConsoleScanner();
+        reportHelper = new ReportHelper(new ArrayList<>(), "TESTCASE-001");
 
         player1 = new Player("Tom");
         player2 = new Player("Jerry");
         gameEngine = new GameEngine(categoryManager,
-                new ArrayList<>(Arrays.asList(player1, player2)));
+                new ArrayList<>(Arrays.asList(player1, player2)), consoleIO, reportHelper);
     }
 
     private void set(String fieldName, Object value) throws Exception {

@@ -3,6 +3,9 @@ package com.project.Commands;
 import com.project.Gameplay.GameEngine;
 import com.project.Helpers.LogHelper;
 
+/**
+ * Command that asks the engine to present categories and choose one.
+ */
 public class SelectCategoryCommand implements GameCommand {
 
     private final GameEngine gameEngine;
@@ -15,7 +18,9 @@ public class SelectCategoryCommand implements GameCommand {
     public void execute(){
         gameEngine.selectCategory();
     }
-
+    /**
+     * @return a CSV-like log entry describing the category selection
+     */
     @Override
     public String toString(){
         return gameEngine.getCurrentPlayer() + ",Select Category," + new LogHelper().getTimeStamp()

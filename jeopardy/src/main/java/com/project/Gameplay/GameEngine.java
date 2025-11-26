@@ -9,6 +9,10 @@ import com.project.IO.ConsoleIO;
 import com.project.Questions.Question;
 
 
+/**
+ * Core game engine that tracks players, categories, questions and scores.
+ * Exposes behavior used by commands to select categories/questions and answer them.
+ */
 public final class GameEngine{
     private String currentCategory = null;
     private Question currentQuestion = null;
@@ -23,14 +27,31 @@ public final class GameEngine{
     private final ReportHelper reportHelper;
     private final ConsoleIO consoleIO;
     
+    /**
+     * Construct a GameEngine with the provided category manager, players,
+     * console IO and report helper.
+     *
+     * @param category category manager containing categories and questions
+     * @param players the list of players participating
+     * @param consoleIO console abstraction for input/output
+     * @param reportHelper helper used to accumulate report entries
+     */
     public GameEngine (CategoryManager category, ArrayList<Player> players, ConsoleIO consoleIO, ReportHelper reportHelper){
         this.category = category;
         this.players = players;
         this.currentPlayer = this.players.get(0);
         this.consoleIO = consoleIO;
-        this.reportHelper = reportHelper;
+        if (reportHelper == null) {
+            this.reportHelper = new ReportHelper(this.players, "AUTO-GENERATED-CASE");
+        } else {
+            this.reportHelper = reportHelper;
+        }
     }
 
+    /**
+     * Prompt the user to select a category from the available categories.
+     * Invalid selections re-prompt until a valid category is chosen.
+     */
     public void selectCategory() {
         boolean found = false;
         this.currentQuestion = null;
@@ -53,6 +74,9 @@ public final class GameEngine{
         }
 
         if (found == false){
+            /**
+             * If the chosen category is invalid present a message and retry.
+             */
             consoleIO.println("\nInvalid Category.");
             selectCategory();
         }
@@ -63,6 +87,10 @@ public final class GameEngine{
         }
     }
 
+    /**
+     * Prompt the user to select a question by dollar value from the
+     * currently selected category. Invalid selections re-prompt.
+     */
     public void selectQuestion(){
         boolean found = false;
         consoleIO.println("\nSelect a question by inputting the dollar value.\n");
@@ -83,6 +111,9 @@ public final class GameEngine{
             }
         }
         if(found == false){
+            /**
+             * If the question value is invalid prompt again.
+             */
             consoleIO.println("\nInvalid Question Choice.\n");
             selectQuestion();
         }
@@ -90,8 +121,12 @@ public final class GameEngine{
         consoleIO.println("\nFor $" + currentQuestion.getValue() + "\n\n" + currentQuestion.getQuestion() + "\n\n" + currentQuestion.getOptionsAsString());
     }
 
+    /**
+     * Read the player's answer, evaluate correctness, update scores and
+     * category state, then advance to the next player's turn.
+     */
     public void answerQuestion(){
-        consoleIO.print("\nYour Choice: ");
+        consoleIO.print("\nYour Choice : ");
         this.givenAnswer = consoleIO.readLine();
 
         if(isAnswerCorrect()){
@@ -122,6 +157,10 @@ public final class GameEngine{
         this.nextPlayerTurn();
     }
 
+    /**
+     * Rotate the active player to the next player in round-robin order
+     * and announce the active player.
+     */
     public void nextPlayerTurn() {
         this.lastPlayer = this.currentPlayer;
         this.currentPlayerIndex = (this.currentPlayerIndex + 1) % this.players.size();
@@ -131,15 +170,43 @@ public final class GameEngine{
         consoleIO.println("---------------------------------");
     }
 
+    /** @return the currently selected category name, or null when none is selected */
     public String getCurrentCategory() {return this.currentCategory;}
+
+    /** @return true when there are no categories remaining */
     public boolean getCategoryEmpty() {return this.category.getAllCatergories().isEmpty();}
+
+    /** @return the currently selected question, or null when none is selected */
     public Question getCurrentQuestion() {return this.currentQuestion;}
+
+    /** @return the player whose turn it currently is */
     public Player getCurrentPlayer(){return this.currentPlayer;}
+
+    /** @return the list of players in the game */
     public ArrayList<Player> getPlayers(){return this.players;}
+
+    /** @return the player who most recently took a turn, or null if none */
     public Player getLastPlayer(){return this.lastPlayer;}
+
+    /** @return the ReportHelper instance used to collect report entries */
     public ReportHelper getReportHelper(){return this.reportHelper;}
+
+    /** @return the last answer given by the current player */
     public String getGivenAnswer(){return this.givenAnswer;}
+
+    /**
+     * Determine whether the most recently provided answer matches the
+     * current question's correct answer.
+     *
+     * @return true if the last given answer is correct
+     */
     public boolean isAnswerCorrect(){return this.givenAnswer.equals(this.currentQuestion.getAnswer());}
+
+    /**
+     * Construct a multi-line string representing current player scores.
+     *
+     * @return score summary for display
+     */
     public String getScores(){
         StringBuilder scores = new StringBuilder("Current Scores:\n");
         for(Player p : this.players){
