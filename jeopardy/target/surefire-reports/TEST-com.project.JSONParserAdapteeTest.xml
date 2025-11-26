@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.project.JSONParserAdapteeTest" time="0.312" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.project.JSONParserAdapteeTest" time="0.425" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="TT"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\chara\AppData\Local\Temp\surefire2727774034076375061\surefirebooter2200247347076505306.jar C:\Users\chara\AppData\Local\Temp\surefire2727774034076375061 2025-11-26T10-47-03_564-jvmRun1 surefire14473340224073134265tmp surefire_08178186640345452798tmp"/>
+    <property name="sun.java.command" value="C:\Users\chara\AppData\Local\Temp\surefire6549389723950870481\surefirebooter2786181446126349722.jar C:\Users\chara\AppData\Local\Temp\surefire6549389723950870481 2025-11-26T11-10-20_410-jvmRun1 surefire11828389828939816602tmp surefire_02821812711256790286tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\target\test-classes;D:\Documents\BSC\Comp Sci\Multi-Player-Jeopardy-Game\jeopardy\target\classes;C:\Users\chara\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\chara\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\chara\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\chara\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\chara\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\chara\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\chara\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\chara\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\chara\.m2\repository\com\opencsv\opencsv\5.9\opencsv-5.9.jar;C:\Users\chara\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\chara\.m2\repository\org\apache\commons\commons-text\1.11.0\commons-text-1.11.0.jar;C:\Users\chara\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar;C:\Users\chara\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\chara\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\chara\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\chara\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar;C:\Users\chara\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\chara\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\chara\AppData\Local\Temp\surefire2727774034076375061\surefirebooter2200247347076505306.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\chara\AppData\Local\Temp\surefire6549389723950870481\surefirebooter2786181446126349722.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -50,7 +50,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-23\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Users\chara\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\chara\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.9.11-bin\bin;C:\Users\chara\AppData\Local\Programs\Python\Launcher\;C:\Users\chara\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Users\chara\.dotnet\tools;C:\Users\chara\AppData\Roaming\npm;C:\Users\chara\AppData\Local\GitHubDesktop\bin;C:\Users\chara\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\chara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts;D:\Downloads\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin;c:\Users\chara\.vscode\extensions\vscjava.vscode-java-debug-0.58.3\bundled\scripts\noConfigScripts;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-23\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Users\chara\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\chara\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.9.11-bin\bin;C:\Program Files\Java\jdk-25\bin;C:\Users\chara\AppData\Local\Programs\Python\Launcher\;C:\Users\chara\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Users\chara\.dotnet\tools;C:\Users\chara\AppData\Roaming\npm;C:\Users\chara\AppData\Local\GitHubDesktop\bin;C:\Users\chara\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\chara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts;D:\Downloads\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin;c:\Users\chara\.vscode\extensions\vscjava.vscode-java-debug-0.58.3\bundled\scripts\noConfigScripts;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Oracle Corporation"/>
@@ -58,7 +58,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testSkipInvalidObject" classname="com.project.JSONParserAdapteeTest$CoreTests" time="0.3"/>
-  <testcase name="testNonExistentFile" classname="com.project.JSONParserAdapteeTest$CoreTests" time="0.003"/>
-  <testcase name="testSingleValidParse" classname="com.project.JSONParserAdapteeTest$CoreTests" time="0.003"/>
+  <testcase name="testSkipInvalidObject" classname="com.project.JSONParserAdapteeTest$CoreTests" time="0.396"/>
+  <testcase name="testNonExistentFile" classname="com.project.JSONParserAdapteeTest$CoreTests" time="0.012"/>
+  <testcase name="testSingleValidParse" classname="com.project.JSONParserAdapteeTest$CoreTests" time="0.012"/>
 </testsuite>
