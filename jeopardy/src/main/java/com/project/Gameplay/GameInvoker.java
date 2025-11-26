@@ -4,7 +4,7 @@ import com.project.Commands.GameCommand;
 import com.project.Helpers.EventLogHelper;
 
 public class GameInvoker{
-    private EventLogHelper eventLogHelper = new EventLogHelper();
+    private final EventLogHelper eventLogHelper = new EventLogHelper();
     private final String caseId;
 
     public GameInvoker(String caseId){

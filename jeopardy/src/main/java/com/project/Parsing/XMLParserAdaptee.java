@@ -18,7 +18,7 @@ import com.project.Questions.Question;
 import com.project.Questions.QuestionBuilder;
 
 public class XMLParserAdaptee implements ParserAdaptee{
-    private ArrayList<Question> questions;
+    private final ArrayList<Question> questions;
 
     public XMLParserAdaptee(){
         this.questions = new ArrayList<>();
@@ -39,7 +39,6 @@ public class XMLParserAdaptee implements ParserAdaptee{
                     Element parsedInfo = (Element) node;
                     try {
                         QuestionBuilder questionBuilder = QuestionBuilder.create();
-                        
                         if (parsedInfo.getElementsByTagName("Category").getLength() > 0) {
                             questionBuilder.setCategory(parsedInfo.getElementsByTagName("Category").item(0).getTextContent());
                         }

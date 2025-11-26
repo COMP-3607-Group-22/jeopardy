@@ -12,7 +12,7 @@ import com.project.Questions.Question;
 import com.project.Questions.QuestionBuilder;
 
 public class JSONParserAdaptee implements ParserAdaptee {
-    private ArrayList<Question> questions;
+    private final ArrayList<Question> questions;
 
     public JSONParserAdaptee(){
         this.questions = new ArrayList<>();

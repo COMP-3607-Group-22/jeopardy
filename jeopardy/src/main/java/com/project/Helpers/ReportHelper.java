@@ -2,27 +2,30 @@ package com.project.Helpers;
 
 import java.util.ArrayList;
 
-import com.project.Gameplay.*;
+import com.project.Gameplay.Player;
 
-public class ReportHelper {
-    private ArrayList<String> report;
-    private GameEngine gameEngine;
+public final class ReportHelper {
+    private final ArrayList<String> report;
+    private final ArrayList<Player> players;
+    private final String caseId;
 
-    public ReportHelper(GameEngine gameEngine){
+    public ReportHelper(ArrayList<Player> players, String caseId){
+        this.players = players;
+        this.caseId = caseId;
+
         this.report = new ArrayList<>();
-        this.gameEngine = gameEngine;
         initReport();
     }
 
     public void initReport(){
-        this.report = new ArrayList<>();
-
-        this.report.add("JEOPARDY PROGRAMMING GAME REPORT\n"
-        + "================================"
-        + "\nCase ID:"
-        + "\nPlayers" + gameEngine.getPlayers().toString()
-        + "\n\nGameplay Summary:"
-        + "\n-----------------\n");
+        this.report.add(
+        "JEOPARDY PROGRAMMING GAME REPORT\n"
+        + "================================\n"
+        + "Case ID: " + this.caseId + "\n"
+        + "Players: " + players
+        + "\n\nGameplay Summary:\n"
+        + "-----------------\n"
+    );
     }
 
     public void addTurnSummary(String entry){
@@ -30,9 +33,9 @@ public class ReportHelper {
     }
 
     public void finalScores(){
-        report.add("Final Scores:\n");
-        for(Player p : gameEngine.getPlayers()){
-            report.add(p.getName() + ": " + p.getScore() + "\n");
+        report.add("Final Scores:");
+        for(Player p : this.players){
+            report.add(p.getName() + ": " + p.getScore());
         }
     }
 
