@@ -78,5 +78,7 @@ public class Gameplay {
     public void exitGame(){
         gameInvoker.executeCommand(new GenerateReportCommand(gameTermination, gameEngine.getReportHelper()));
         gameInvoker.executeCommand(new GenerateEventLogCommand(gameTermination, gameInvoker.getEventLogHelper()));
+        consoleIO.print("Thank you for playing!\n");
+        consoleIO.close();
     }
 }

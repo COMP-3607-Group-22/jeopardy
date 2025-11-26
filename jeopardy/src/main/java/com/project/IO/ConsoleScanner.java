@@ -32,6 +32,7 @@ public class ConsoleScanner implements ConsoleIO {
      * Close the underlying scanner. Call this when the application is
      * shutting down to release system resources.
      */
+    @Override
     public void close() {
         scanner.close();
     }

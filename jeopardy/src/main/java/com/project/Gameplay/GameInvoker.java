@@ -56,7 +56,7 @@ public class GameInvoker{
      * @param players list of players for the report
      * @return a ReportHelper instance with the case id set
      */
-    public ReportHelper createReportHelper(ArrayList<com.project.Gameplay.Player> players){
+    public ReportHelper createReportHelper(ArrayList<Player> players){
         ReportHelper rh = new ReportHelper(players, null);
         rh.setCaseId(this.caseId);
         return rh;

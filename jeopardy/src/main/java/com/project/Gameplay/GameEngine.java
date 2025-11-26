@@ -175,7 +175,7 @@ public final class GameEngine{
     public String getCurrentCategory() {return this.currentCategory;}
 
     /** @return true when there are no categories remaining */
-    public boolean getCategoryEmpty() {return this.category.getAllCatergories().isEmpty();}
+    public boolean getCategoryEmpty() {return this.category.getAllCategories().isEmpty();}
 
     /** @return the currently selected question, or null when none is selected */
     public Question getCurrentQuestion() {return this.currentQuestion;}

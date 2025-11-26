@@ -46,7 +46,7 @@ public class CategoryManager {
         return categories.values();
     }
 
-    public Map<String, List<Question>> getAllCatergories() {
+    public Map<String, List<Question>> getAllCategories() {
         return Map.copyOf(categories);
     }
 
