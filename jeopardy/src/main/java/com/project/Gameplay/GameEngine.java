@@ -150,6 +150,7 @@ public final class GameEngine{
             consoleIO.println("\n*****************************************");
             consoleIO.println("No more categories exist. The game has concluded.");
             consoleIO.println("\n*****************************************");
+            return;
         }
 
         addTurnSummary();
