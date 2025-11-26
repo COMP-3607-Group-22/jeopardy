@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.project.XMLParserAdapteeTest" time="0.259" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.project.XMLParserAdapteeTest" time="0.102" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="TT"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-25.0.0.36-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\kiero\AppData\Local\Temp\surefire588714289994058687\surefirebooter10580313291122568871.jar C:\Users\kiero\AppData\Local\Temp\surefire588714289994058687 2025-11-25T23-33-24_474-jvmRun1 surefire10909744307012018834tmp surefire_017815997282587620469tmp"/>
+    <property name="sun.java.command" value="C:\Users\kiero\AppData\Local\Temp\surefire13136911987663994429\surefirebooter4723795750151567870.jar C:\Users\kiero\AppData\Local\Temp\surefire13136911987663994429 2025-11-26T02-01-32_567-jvmRun1 surefire49215147460889990tmp surefire_011655991526700650316tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\kiero\jeopardy\jeopardy\target\test-classes;C:\Users\kiero\jeopardy\jeopardy\target\classes;C:\Users\kiero\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\kiero\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\kiero\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\kiero\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\kiero\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\kiero\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\kiero\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\kiero\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\kiero\.m2\repository\com\opencsv\opencsv\5.9\opencsv-5.9.jar;C:\Users\kiero\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\kiero\.m2\repository\org\apache\commons\commons-text\1.11.0\commons-text-1.11.0.jar;C:\Users\kiero\.m2\repository\commons-beanutils\commons-beanutils\1.9.4\commons-beanutils-1.9.4.jar;C:\Users\kiero\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\kiero\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\kiero\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\kiero\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar;C:\Users\kiero\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\kiero\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\kiero\AppData\Local\Temp\surefire588714289994058687\surefirebooter10580313291122568871.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\kiero\AppData\Local\Temp\surefire13136911987663994429\surefirebooter4723795750151567870.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25+36-LTS"/>
@@ -60,7 +60,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="testSkipInvalidItem" classname="com.project.XMLParserAdapteeTest$CoreTests" time="0.239"/>
-  <testcase name="testNonExistentFile" classname="com.project.XMLParserAdapteeTest$CoreTests" time="0.007"/>
-  <testcase name="testSingleValidParse" classname="com.project.XMLParserAdapteeTest$CoreTests" time="0.008"/>
+  <testcase name="testSkipInvalidItem" classname="com.project.XMLParserAdapteeTest$CoreTests" time="0.067"/>
+  <testcase name="testNonExistentFile" classname="com.project.XMLParserAdapteeTest$CoreTests" time="0.006"/>
+  <testcase name="testSingleValidParse" classname="com.project.XMLParserAdapteeTest$CoreTests" time="0.02"/>
 </testsuite>

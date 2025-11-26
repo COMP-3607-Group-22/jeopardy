@@ -1,0 +1,178 @@
+# Created at 2025-11-26T00:55:57.591
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readFully(DataInputStream.java:215)
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:390)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+
+
+# Created at 2025-11-26T00:55:58.084
+Unexpected IOException with stream: Builder validation failed: Answer is required
+
+
+# Created at 2025-11-26T00:55:58.087
+Unexpected IOException: 6,1,com.project.JSONParserAdapteeTest$CoreTests,testSkipInvalidObject,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.101
+Unexpected IOException: 5,1,com.project.JSONParserAdapteeTest$CoreTests,testNonExistentFile,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.114
+Unexpected IOException with stream: Error reading JSON file: nonexistent\file.json (The system cannot find the path specified)
+
+
+# Created at 2025-11-26T00:55:58.118
+Unexpected IOException: 6,1,com.project.JSONParserAdapteeTest$CoreTests,testNonExistentFile,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.127
+Unexpected IOException: 5,1,com.project.JSONParserAdapteeTest$CoreTests,testSingleValidParse,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.143
+Unexpected IOException: 6,1,com.project.JSONParserAdapteeTest$CoreTests,testSingleValidParse,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.146
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.project.JSONParserAdapteeTest,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.152
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.project.MainTest,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.157
+Unexpected IOException: 5,1,com.project.MainTest,shouldAnswerWithTrue,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.162
+Unexpected IOException: 6,1,com.project.MainTest,shouldAnswerWithTrue,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.165
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.project.MainTest,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.169
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.project.ParserAdapterTest,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.176
+Unexpected IOException: 5,1,com.project.ParserAdapterTest$CoreTests,testDelegation,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.189
+Unexpected IOException: 6,1,com.project.ParserAdapterTest$CoreTests,testDelegation,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.193
+Unexpected IOException: 5,1,com.project.ParserAdapterTest$CoreTests,testFormatDetection,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.213
+Unexpected IOException: 6,1,com.project.ParserAdapterTest$CoreTests,testFormatDetection,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.233
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.project.ParserAdapterTest,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.245
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.project.ScoringTest,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.267
+Unexpected IOException: 5,1,com.project.ScoringTest$RealGameFlow,averageGameFlow,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.272
+Unexpected IOException: 6,1,com.project.ScoringTest$RealGameFlow,averageGameFlow,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.285
+Unexpected IOException: 5,1,com.project.ScoringTest$EdgeCaseTests,largeScoreHandling,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.294
+Unexpected IOException: 6,1,com.project.ScoringTest$EdgeCaseTests,largeScoreHandling,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.311
+Unexpected IOException: 5,1,com.project.ScoringTest$IncorrectAnswerTests,scoresCanGoNegative,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.331
+Unexpected IOException: 6,1,com.project.ScoringTest$IncorrectAnswerTests,scoresCanGoNegative,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.355
+Unexpected IOException: 5,1,com.project.ScoringTest$IncorrectAnswerTests,incorrectAnswerDeductsPoints,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.359
+Unexpected IOException: 6,1,com.project.ScoringTest$IncorrectAnswerTests,incorrectAnswerDeductsPoints,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.369
+Unexpected IOException: 5,1,com.project.ScoringTest$CorrectAnswerTests,multipleCorrectAnswers,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.413
+Unexpected IOException: 6,1,com.project.ScoringTest$CorrectAnswerTests,multipleCorrectAnswers,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.480
+Unexpected IOException: 5,1,com.project.ScoringTest$CorrectAnswerTests,correctAnswerAddsPoints,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.506
+Unexpected IOException: 6,1,com.project.ScoringTest$CorrectAnswerTests,correctAnswerAddsPoints,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.519
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.project.ScoringTest,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.530
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.project.XMLParserAdapteeTest,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.539
+Unexpected IOException: 5,1,com.project.XMLParserAdapteeTest$CoreTests,testSkipInvalidItem,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.605
+Unexpected IOException with stream: Builder validation failed: Answer is required
+
+
+# Created at 2025-11-26T00:55:58.607
+Unexpected IOException: 6,1,com.project.XMLParserAdapteeTest$CoreTests,testSkipInvalidItem,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.609
+Unexpected IOException: 5,1,com.project.XMLParserAdapteeTest$CoreTests,testNonExistentFile,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.615
+Unexpected IOException with stream: Error reading XML file: C:\Users\kiero\jeopardy\jeopardy\nonexistent\file.xml (The system cannot find the path specified)
+
+
+# Created at 2025-11-26T00:55:58.618
+Unexpected IOException: 6,1,com.project.XMLParserAdapteeTest$CoreTests,testNonExistentFile,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.621
+Unexpected IOException: 5,1,com.project.XMLParserAdapteeTest$CoreTests,testSingleValidParse,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.629
+Unexpected IOException: 6,1,com.project.XMLParserAdapteeTest$CoreTests,testSingleValidParse,null,null,null
+
+
+# Created at 2025-11-26T00:55:58.632
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,com.project.XMLParserAdapteeTest,null,null,null
+
+
