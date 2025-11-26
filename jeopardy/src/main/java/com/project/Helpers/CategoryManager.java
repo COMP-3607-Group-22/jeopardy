@@ -7,8 +7,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.project.Questions.*;
+import com.project.Questions.Question;
+import com.project.Questions.QuestionManager;
 
+/**
+ * Manages categories and the mapping of category names to question lists.
+ */
 public class CategoryManager {
     private final Map<String, List<Question>> categories = new LinkedHashMap<>();
 

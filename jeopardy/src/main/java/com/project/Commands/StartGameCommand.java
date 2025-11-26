@@ -3,6 +3,9 @@ package com.project.Commands;
 import com.project.Gameplay.Gameplay;
 import com.project.Helpers.LogHelper;
 
+/**
+ * Command to start the gameplay loop. Delegates to `Gameplay.startGame()`.
+ */
 public class StartGameCommand implements GameCommand {
     private final Gameplay gameplay;
 
@@ -14,7 +17,9 @@ public class StartGameCommand implements GameCommand {
     public void execute() {
         gameplay.startGame();
     }
-
+    /**
+     * Execute the start game command by delegating to `Gameplay.startGame()`.
+     */
     @Override
     public String toString(){
         return "System,Start Game," + new LogHelper().getTimeStamp() + ",,,,";

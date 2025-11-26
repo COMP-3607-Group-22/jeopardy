@@ -2,6 +2,7 @@ package com.project.Parsing;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -11,6 +12,10 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.project.Questions.Question;
 import com.project.Questions.QuestionBuilder;
 
+/**
+ * JSON parser implementation that reads an array of question objects and
+ * converts them to Question instances via the QuestionBuilder.
+ */
 public class JSONParserAdaptee implements ParserAdaptee {
     private final ArrayList<Question> questions;
 
@@ -20,10 +25,19 @@ public class JSONParserAdaptee implements ParserAdaptee {
 
     @Override
     public ArrayList<Question> parse(String fileName){
+        /**
+         * Parse questions from a JSON array file. Each element should be an
+         * object containing the expected fields (Category, Value, Question,
+         * Options, CorrectAnswer). Invalid entries are skipped.
+         *
+         * @param fileName path or resource identifying the JSON file
+         * @return list of parsed Question objects (never null)
+         */
         questions.clear();
+        String path = normalizePath(fileName);
         try{
             ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode rootNode = objectMapper.readTree(new File(fileName));
+            JsonNode rootNode = objectMapper.readTree(new File(path));
             if(rootNode.isArray()){
                 ArrayNode arrayNode = (ArrayNode) rootNode;
 
@@ -67,6 +81,18 @@ public class JSONParserAdaptee implements ParserAdaptee {
             System.err.println("Error reading JSON file: " + e.getMessage());
         }
         return questions;
+    }
+
+    private static String normalizePath(String p) {
+        try {
+            String decoded = java.net.URLDecoder.decode(p, java.nio.charset.StandardCharsets.UTF_8.name());
+            if (decoded.matches("^/[A-Za-z]:.*")) {
+                return decoded.substring(1);
+            }
+            return decoded;
+        } catch (UnsupportedEncodingException e) {
+            return p;
+        }
     }
 
 }

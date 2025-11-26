@@ -3,6 +3,9 @@ import com.project.Gameplay.GameTermination;
 import com.project.Helpers.LogHelper;
 import com.project.Helpers.ReportHelper;
 
+/**
+ * Command to generate the final textual gameplay report using GameTermination.
+ */
 public class GenerateReportCommand implements GameCommand {
 
     private final GameTermination gameTerm;

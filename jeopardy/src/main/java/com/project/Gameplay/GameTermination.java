@@ -13,7 +13,12 @@ public class GameTermination{
     public GameTermination(ConsoleIO consoleIO){
         this.consoleIO = consoleIO;
     }
-
+    /**
+     * Write the supplied event log to a CSV file under `src/main/resources`.
+     * Each in-memory CSV row is written as a line in the output file.
+     *
+     * @param eventLogHelper helper providing the list of event CSV rows
+     */
     public void generateEventLog(EventLogHelper eventLogHelper){
         consoleIO.print("Generating event log...\n");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("jeopardy/src/main/resources/game_event_log.csv"))) {
@@ -27,6 +32,11 @@ public class GameTermination{
         }
     }
 
+    /**
+     * Write the gameplay report produced by `ReportHelper` to a text file.
+     *
+     * @param reportHelper the helper that produces the final report lines
+     */
     public void generateReport(ReportHelper reportHelper){
         consoleIO.print("Generating report...\n");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("jeopardy/src/main/resources/game_report.txt"))) {
@@ -40,6 +50,13 @@ public class GameTermination{
         }
     }
 
+    /**
+     * Convert the event-log history (list of CSV lines) into a 2D string
+     * array where each row has exactly 9 columns matching the CSV header.
+     *
+     * @param history list of CSV-formatted log lines
+     * @return a 2D array of parsed values
+     */
     public String[][] parseHistoryToData(ArrayList<String> history) {
         String[][] data = new String[history.size()][9];
         for (int i = 0; i < history.size(); i++) {
@@ -50,6 +67,13 @@ public class GameTermination{
         return data;
     }
 
+    /**
+     * Replace null entries in a parsed CSV row with empty strings to avoid
+     * NullPointerExceptions when joining or writing rows.
+     *
+     * @param row a parsed CSV row
+     * @return the same row instance with nulls replaced by ""
+     */
     public String[] resolveNulls(String[] row){
         for(int i = 0; i < row.length; i++){
             if(row[i] == null){

@@ -1,5 +1,11 @@
 package com.project;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.project.Gameplay.GameEngine;
@@ -7,14 +13,10 @@ import com.project.Gameplay.GameTermination;
 import com.project.Gameplay.Player;
 import com.project.Helpers.CategoryManager;
 import com.project.Helpers.ReportHelper;
+import com.project.IO.ConsoleScanner;
 import com.project.Questions.Question;
 import com.project.Questions.QuestionBuilder;
 import com.project.Questions.QuestionManager;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import java.util.ArrayList;
-import java.util.List;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 
 @DisplayName("Report Generation Tests")
 class ReportGenerationTest {
@@ -28,12 +30,13 @@ class ReportGenerationTest {
         var questionManager = new QuestionManager();
         var categoryManager = new CategoryManager(questionManager);
         var players = new ArrayList<Player>();
+        var consoleIO = new ConsoleScanner();
         players.add(new Player("Batman"));
         players.add(new Player("Robin"));
 
-        gameEngine = new GameEngine(categoryManager, players);
+        gameEngine = new GameEngine(categoryManager, players, consoleIO, reportHelper);
         reportHelper = gameEngine.getReportHelper();
-        terminator = new GameTermination();
+        terminator = new GameTermination(consoleIO);
 
         addFakeTurn("Batman", "Functions", 500, "Python", true);
     }

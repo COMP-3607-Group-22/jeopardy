@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 import com.project.Questions.Question;
 
+/**
+ * Adapter that selects the appropriate concrete parser implementation based
+ * on the file extension and exposes a uniform `FileParser` interface.
+ */
 // Adapter Pattern - Adapter
 public class ParserAdapter implements FileParser {
     private ParserAdaptee parser;
@@ -22,6 +26,13 @@ public class ParserAdapter implements FileParser {
 
     @Override
     public ArrayList<Question> parse(String fileName) {
+        /**
+         * Delegate parsing to the selected format-specific parser.
+         *
+         * @param fileName path to the input file
+         * @return parsed questions
+         * @throws IllegalStateException when no parser was selected
+         */
         if (parser == null) {
             throw new IllegalStateException("No parser initialized");
         }
@@ -29,6 +40,11 @@ public class ParserAdapter implements FileParser {
     }
 
     private void selectParserByFormat(String format) {
+        /**
+         * Select a concrete parser implementation based on the extension
+         * (csv/json/xml). Throws IllegalArgumentException for unsupported
+         * formats.
+         */
         switch (format.toLowerCase()) {
             case "csv":
                 this.parser = new CSVParserAdaptee();
