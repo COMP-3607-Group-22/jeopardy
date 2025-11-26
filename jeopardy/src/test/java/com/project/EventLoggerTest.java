@@ -1,15 +1,10 @@
 package com.project;
 
 import org.junit.jupiter.api.Test;
-
 import com.project.Gameplay.GameInvoker;
 import com.project.Helpers.EventLogHelper;
-
 import static org.junit.jupiter.api.Assertions.*;
-
-
 import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
