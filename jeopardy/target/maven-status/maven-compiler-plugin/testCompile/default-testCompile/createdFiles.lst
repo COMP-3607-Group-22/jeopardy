@@ -1,9 +1,9 @@
 com\project\CSVParserAdapteeTest.class
 com\project\JSONParserAdapteeTest$CoreTests.class
-com\project\JSONParserAdapteeTest.class
 com\project\MainTest.class
 com\project\ParserAdapterTest$CoreTests.class
 com\project\CSVParserAdapteeTest$CoreTests.class
 com\project\ParserAdapterTest.class
+com\project\JSONParserAdapteeTest.class
 com\project\XMLParserAdapteeTest$CoreTests.class
 com\project\XMLParserAdapteeTest.class
