@@ -10,12 +10,9 @@ import com.project.Helpers.ReportHelper;
 import com.project.Questions.Question;
 import com.project.Questions.QuestionBuilder;
 import com.project.Questions.QuestionManager;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
